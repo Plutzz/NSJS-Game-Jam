@@ -5,19 +5,22 @@ using UnityEngine.Tilemaps;
 
 public class Parallax : MonoBehaviour
 {
-    private float startPos;
+    private float startPosX, startPosY;
     [SerializeField] GameObject Cam;
-    public float parallaxEffect;
+    [SerializeField] private float parallaxEffectX = 0;
+    [SerializeField] private float parallaxEffectY = 0;
 
     private void Start()
     {
-        startPos = transform.position.x;
+        startPosX = transform.position.x;
+        startPosY = transform.position.y;
     }
 
     private void FixedUpdate()
     {
-        float dist = (Cam.transform.position.x * parallaxEffect);
+        float _distX = Cam.transform.position.x * parallaxEffectX;
+        float _distY = Cam.transform.position.y * parallaxEffectY;
+        transform.position = new Vector3(startPosX + _distX, startPosY + _distY, transform.position.z);
 
-        transform.position = new Vector3(startPos + dist, transform.position.y, transform.position.z);
     }
 }
