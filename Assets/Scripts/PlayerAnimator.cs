@@ -32,7 +32,7 @@ public class PlayerAnimator : MonoBehaviour
 
         // Flip sprite
 
-        if (xVelocity != 0)
+        if (xVelocity != 0 && playerController.CanAttack)
         {
             if (xVelocity > 0) transform.localScale = new Vector3(1, 1, 1);
             else transform.localScale = new Vector3(-1, 1, 1);
@@ -66,7 +66,7 @@ public class PlayerAnimator : MonoBehaviour
             //Instantiate(jumpParticles);
         }
 
-        if(playerController.AttackingThisFrame)
+        if(playerController.StartAttackThisFrame)
         {
             anim.SetBool("Attacking", true);
         }
