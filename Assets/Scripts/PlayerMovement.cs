@@ -305,7 +305,7 @@ namespace PlayerMovement {
             var positionToMoveTo = transform.position;
             for (int i = 1; i < freeColliderIterations; i++)
             {
-                // increment to check all but furthestPoint - we did that already
+                // increment to check all but furthestPoint
                 var t = (float)i / freeColliderIterations;
                 var posToTry = Vector2.Lerp(pos, furthestPoint, t);
 
@@ -318,7 +318,7 @@ namespace PlayerMovement {
                     {
                         if (currentVerticalSpeed < 0) currentVerticalSpeed = 0;
                         var dir = transform.position - hit.transform.position;
-                        transform.position += dir.normalized * move.magnitude;
+                        transform.position -= dir.normalized * move.magnitude;
                     }
 
                     return;
