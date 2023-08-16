@@ -16,9 +16,29 @@ MonoBehaviour:
   - m_Name: Idle
     m_Hash: 1008081451
     m_CategoryList: []
-    m_OverrideEntries: []
+    m_OverrideEntries:
+    - m_Name: fategirl_idle_0
+      m_Hash: 330769667
+      m_Sprite: {fileID: -1278530009, guid: 840fa8d25667d7b40b80ee60490f3a29, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1278530009, guid: 840fa8d25667d7b40b80ee60490f3a29, type: 3}
+    - m_Name: fategirl_idle_1
+      m_Hash: 615519637
+      m_Sprite: {fileID: 356296872, guid: 840fa8d25667d7b40b80ee60490f3a29, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 356296872, guid: 840fa8d25667d7b40b80ee60490f3a29, type: 3}
+    - m_Name: fategirl_idle_2
+      m_Hash: 1035551791
+      m_Sprite: {fileID: 1638118876, guid: 840fa8d25667d7b40b80ee60490f3a29, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1638118876, guid: 840fa8d25667d7b40b80ee60490f3a29, type: 3}
+    - m_Name: fategirl_idle_3
+      m_Hash: 180253881
+      m_Sprite: {fileID: -1957860710, guid: 840fa8d25667d7b40b80ee60490f3a29, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1957860710, guid: 840fa8d25667d7b40b80ee60490f3a29, type: 3}
     m_FromMain: 0
-    m_EntryOverrideCount: 0
+    m_EntryOverrideCount: 4
   - m_Name: Walk
     m_Hash: 765711723
     m_CategoryList: []
