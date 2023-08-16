@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 99a2d916427c8b243bdb225ccd311b0e
+guid: 5747ba7c71a812141bbfcc11e06d0759
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,29 +101,101 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fate_tilemap6_0
+      name: fate_skyCLOUDS_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 98
+        width: 30
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d890f04754320c458df44226c9101b9
+      internalID: 787666611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fate_skyCLOUDS_1
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 77
+        width: 44
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62594c12f8744b8408f8fa689a7bfa2c
+      internalID: 801390368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fate_skyCLOUDS_2
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 55
+        width: 39
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bd379c44e2ed674bbd69a1dc0321ea5
+      internalID: 836792901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fate_skyCLOUDS_3
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 34
+        width: 30
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f7f273d14f612a4382ab21cc3341d10
+      internalID: 421130784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fate_skyCLOUDS_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 16
-        height: 16
+        y: 14
+        width: 28
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1abe3db699de23947bcedad5961d7495
-      internalID: 1330194206
+      spriteID: 1ead50a2f187c93488b24baff5f2781c
+      internalID: -673317499
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fate_tilemap6_1
+      name: fate_skyCLOUDS_5
       rect:
         serializedVersion: 2
-        x: 16
+        x: 60
         y: 0
-        width: 16
-        height: 16
+        width: 39
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,50 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f11f0d6925012a040963ca6dbe735b8c
-      internalID: -653383470
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fate_tilemap6_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba368f7b04de8c548834e9802ac4f4b2
-      internalID: -2108073075
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fate_tilemap6_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b2a1b4b5e5d191c43af3a3aec156dcc7
-      internalID: 2116688538
+      spriteID: b31645f706d2aa44082db4b3d1930425
+      internalID: -435932182
       vertices: []
       indices: 
       edges: []
@@ -211,10 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      fate_tilemap6_0: 1330194206
-      fate_tilemap6_1: -653383470
-      fate_tilemap6_2: -2108073075
-      fate_tilemap6_3: 2116688538
+      fate_skyCLOUDS_0: 787666611
+      fate_skyCLOUDS_1: 801390368
+      fate_skyCLOUDS_2: 836792901
+      fate_skyCLOUDS_3: 421130784
+      fate_skyCLOUDS_4: -673317499
+      fate_skyCLOUDS_5: -435932182
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
