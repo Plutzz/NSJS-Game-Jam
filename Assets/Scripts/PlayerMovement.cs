@@ -182,7 +182,6 @@ namespace PlayerMovement {
                 currentHorizontalSpeed = Mathf.MoveTowards(currentHorizontalSpeed, 0, deAcceleration * Time.deltaTime);
             }
 
-            // ADD CODE TO PREVENT WALKING THROUGH WALLS
 
             if (currentHorizontalSpeed > 0 && colRight || currentHorizontalSpeed < 0 && colLeft)
             {

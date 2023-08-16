@@ -9665,26 +9665,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 450739109934308645, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
-      propertyPath: rayBuffer
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 450739109934308645, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
-      propertyPath: detectorCount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 450739109934308645, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
-      propertyPath: detectionRayLength
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 450739109934308645, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
-      propertyPath: characterBounds.m_Extent.x
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 450739109934308645, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
-      propertyPath: characterBounds.m_Extent.y
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 450739109934308824, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -9728,10 +9708,6 @@ PrefabInstance:
     - target: {fileID: 450739109934308824, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 450739109934308825, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 450739109934308831, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
       propertyPath: m_Name
