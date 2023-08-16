@@ -34,8 +34,8 @@ public class PlayerAnimator : MonoBehaviour
 
         if (xVelocity != 0 && playerController.CanAttack)
         {
-            if (xVelocity > 0) transform.localScale = new Vector3(1, 1, 1);
-            else transform.localScale = new Vector3(-1, 1, 1);
+            if (xVelocity > 0) transform.rotation = new Quaternion(0, 0, 0, 0);
+            else transform.rotation = new Quaternion(0, 180, 0, 0);
         }
         
 

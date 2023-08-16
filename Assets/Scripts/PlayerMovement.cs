@@ -317,7 +317,7 @@ namespace PlayerMovement {
                     {
                         if (currentVerticalSpeed < 0) currentVerticalSpeed = 0;
                         var dir = transform.position - hit.bounds.center;
-                        transform.position +=  dir.normalized * move.magnitude;
+                        transform.position += dir.normalized * move.magnitude * 2;
                     }
 
                     return;
