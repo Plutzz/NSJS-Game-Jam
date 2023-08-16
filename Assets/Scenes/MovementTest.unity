@@ -753,6 +753,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Velocity: {x: 0, y: 0, z: 0}
+  characterBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  detectorCount: 3
+  detectionRayLength: 0.1
+  rayBuffer: 0.1
+  acceleration: 90
+  moveClamp: 13
+  deAcceleration: 60
+  apexBonus: 2
 --- !u!1 &2088897025
 GameObject:
   m_ObjectHideFlags: 0
