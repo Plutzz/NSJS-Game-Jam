@@ -20,7 +20,7 @@ namespace PlayerMovement {
 
         //Make sure colliders are fully established when update starts
         private bool _active;
-        void Awake() => Invoke(nameof(Activate), 0.5f);
+        void Awake() => Invoke(nameof(Activate), 1f);
         void Activate() => _active = true;
 
         private void Update()
