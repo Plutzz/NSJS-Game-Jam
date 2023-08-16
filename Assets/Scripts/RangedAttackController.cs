@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeController : MonoBehaviour
+public class RangedAttackController : MonoBehaviour
 {
     [SerializeField] private int damage = 1;
-    private void OnCollisionEnter2D(Collision2D _other)
+    [SerializeField] private float speed = 1f;
+    [SerializeField] private Rigidbody2D rb;
+
+
+    private void Start()
     {
-        Debug.Log("enemy hit");
-        if (_other.gameObject.TryGetComponent(out DamageableEntity enemyHit))
-        {
-            enemyHit.TakeDamage(damage);
-        }
+        rb.velocity = Vector3.right * speed;
     }
+
+
 
     private void OnTriggerEnter2D(Collider2D _other)
     {

@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float attackTimer;
     [SerializeField] private AnimationClip attackAnim;
-    [SerializeField] private GameObject Melee;
+    [SerializeField] private GameObject Projectile;
 
     public bool StartAttackThisFrame { get; private set; }
 
@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Attack()
     {
+        Instantiate(Projectile, transform.position, Quaternion.Euler(0, 0, -90));
         StartAttackThisFrame = true;
         StartCoroutine(AttackActive());
     }
@@ -39,9 +40,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator AttackActive()
     {
         CanAttack = false;
-        Melee.SetActive(true);
         yield return new WaitForSeconds(attackAnim.length);
-        Melee.SetActive(false);
         CanAttack = true;
         yield return null;
 
