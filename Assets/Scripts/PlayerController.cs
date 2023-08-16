@@ -6,31 +6,46 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float attackTimer;
     [SerializeField] private AnimationClip attackAnim;
+    [SerializeField] private GameObject Melee;
 
-    public bool AttackingThisFrame { get; private set; }
+    public bool StartAttackThisFrame { get; private set; }
 
     public bool CanAttack { get; private set; }
 
+
+    private void Start()
+    {
+        CanAttack = true;
+    }
 
     private void Update()
     {
         if (CanAttack && Input.GetButtonDown("Attack1"))
         {
-            CanAttack = false;
-            AttackingThisFrame = true;
-            attackTimer = attackAnim.length;
+            Attack();
         }
 
         else if (CanAttack == false)
         {
-            attackTimer -= Time.deltaTime;
-            AttackingThisFrame = false;
-
-            if(attackTimer < 0)
-            {
-                CanAttack = true;
-            }
+            StartAttackThisFrame = false;
         }
+    }
+    private void Attack()
+    {
+        StartAttackThisFrame = true;
+        StartCoroutine(AttackActive());
+    }
+
+    IEnumerator AttackActive()
+    {
+        CanAttack = false;
+        Melee.SetActive(true);
+        yield return new WaitForSeconds(attackAnim.length);
+        Melee.SetActive(false);
+        CanAttack = true;
+        yield return null;
+
+
     }
 
 
