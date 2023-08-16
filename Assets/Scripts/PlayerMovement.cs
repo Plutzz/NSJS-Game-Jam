@@ -68,7 +68,7 @@ namespace PlayerMovement {
         [SerializeField] private LayerMask groundLayer;
         [SerializeField] private int detectorCount = 3;
         [SerializeField] private float detectionRayLength = 0.1f;
-        [SerializeField][Range(0.1f, 0.3f)] private float rayBuffer = 0.1f; // prevents side rays from hitting the ground
+        [SerializeField][Range(0.05f, 0.3f)] private float rayBuffer = 0.05f; // prevents side rays from hitting the ground
 
         private RayRange raysUp, raysRight, raysDown, raysLeft;
         private bool colUp, colRight, colDown, colLeft;
@@ -316,8 +316,8 @@ namespace PlayerMovement {
                     if (i == 1)
                     {
                         if (currentVerticalSpeed < 0) currentVerticalSpeed = 0;
-                        var dir = transform.position - hit.transform.position;
-                        transform.position -= dir.normalized * move.magnitude;
+                        var dir = transform.position - hit.bounds.center;
+                        transform.position +=  dir.normalized * move.magnitude;
                     }
 
                     return;

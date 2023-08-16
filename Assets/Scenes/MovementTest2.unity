@@ -9665,6 +9665,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1843698019, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+      propertyPath: attackAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 0f942fe81bdf62d458e50693a036098a, type: 2}
+    - target: {fileID: 1843698019, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+      propertyPath: attackTimer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 450739109934308824, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
       propertyPath: m_RootOrder
       value: 4

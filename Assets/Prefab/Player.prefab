@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 450739109934308824}
   - component: {fileID: 450739109934308827}
   - component: {fileID: 450739109934308645}
+  - component: {fileID: 1843698019}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -182,7 +183,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 1}
+  m_Size: {x: 0.6, y: 0.8}
   m_EdgeRadius: 0
 --- !u!114 &450739109934308645
 MonoBehaviour:
@@ -204,7 +205,7 @@ MonoBehaviour:
     m_Bits: 64
   detectorCount: 3
   detectionRayLength: 0.1
-  rayBuffer: 0.1
+  rayBuffer: 0.05
   acceleration: 90
   moveClamp: 13
   deAcceleration: 60
@@ -219,3 +220,16 @@ MonoBehaviour:
   jumpBuffer: 0.1
   jumpEndEarlyGravityModifier: 3
   freeColliderIterations: 10
+--- !u!114 &1843698019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450739109934308831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4993316320ae2824fb85a3a5efb733ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackTimer: 0.2

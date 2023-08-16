@@ -13,10 +13,13 @@ public class PlayerAnimator : MonoBehaviour
     private float yVelocity;
     private ParticleSystem.MinMaxGradient currentGradient;
     private IPlayerController player;
+    private PlayerController playerController;
+
 
     private void Awake()
     {
         player = GetComponentInParent<IPlayerController>();
+        playerController = GetComponentInParent<PlayerController>();
         currentGradient = new ParticleSystem.MinMaxGradient(Color.cyan);
     }
 
@@ -59,10 +62,28 @@ public class PlayerAnimator : MonoBehaviour
 
         if(player.JumpingThisFrame)
         {
-            SetColor(jumpParticles);
-            Debug.Log("Jump Particles");
-            Instantiate(jumpParticles);
+            //Debug.Log("Jump Particles");
+            //Instantiate(jumpParticles);
         }
+
+        if(playerController.AttackingThisFrame)
+        {
+            anim.SetBool("Attacking", true);
+        }
+        else
+        {
+            anim.SetBool("Attacking", false);
+        }
+
+        if(playerController.CanAttack)
+        {
+            anim.SetBool("CurrentlyAttacking", false);
+        }
+        else
+        {
+            anim.SetBool("CurrentlyAttacking", true);
+        }
+    
     }
 
     private void SetColor(ParticleSystem ps)
