@@ -269,7 +269,7 @@ namespace PlayerMovement {
             // End the jump early if button released
             if (!colDown && Input.JumpUp && !endedJumpEarly && Velocity.y > 0)
             {
-                // _currentVerticalSpeed = 0;
+                currentVerticalSpeed = 0;
                 endedJumpEarly = true;
             }
 

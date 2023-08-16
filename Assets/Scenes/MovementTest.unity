@@ -732,7 +732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterBounds:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0.25, y: 0.5, z: 0}
+    m_Extent: {x: 0.15, y: 0.4, z: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -742,12 +742,12 @@ MonoBehaviour:
   acceleration: 90
   moveClamp: 13
   deAcceleration: 90
-  apexBonus: 2
+  apexBonus: 10
   movementMultiplier: 80
   fallClamp: -40
   minFallSpeed: 80
   maxFallSpeed: 120
-  jumpHeight: 22
+  jumpHeight: 25
   jumpApexThreshold: 10
   coyoteTimeThreshold: 0.1
   jumpBuffer: 0.1
