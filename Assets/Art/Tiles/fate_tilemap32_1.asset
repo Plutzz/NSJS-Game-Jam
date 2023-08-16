@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Lamp
+  m_Name: fate_tilemap32_1
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 3867d5b3755b00549b336498b2fa95b6, type: 3}
+  m_Sprite: {fileID: -111372559, guid: 5fece702dc885454ca08be09eebaac55, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
