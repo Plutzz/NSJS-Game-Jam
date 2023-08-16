@@ -68,7 +68,7 @@ namespace PlayerMovement {
         [SerializeField] private LayerMask groundLayer;
         [SerializeField] private int detectorCount = 3;
         [SerializeField] private float detectionRayLength = 0.1f;
-        [SerializeField][Range(0.05f, 0.3f)] private float rayBuffer = 0.05f; // prevents side rays from hitting the ground
+        [SerializeField][Range(0f, 0.3f)] private float rayBuffer = 0.05f; // prevents side rays from hitting the ground
 
         private RayRange raysUp, raysRight, raysDown, raysLeft;
         private bool colUp, colRight, colDown, colLeft;
@@ -283,6 +283,7 @@ namespace PlayerMovement {
         [Header("MOVE")]
         [SerializeField, Tooltip("Raising this value increases collision accuracy at the cost of performance.")]
         private int freeColliderIterations = 10;
+        [SerializeField] private int nudgeAmount = 2;
 
         // We cast our bounds before moving to avoid future collisions
         private void MoveCharacter()
@@ -313,11 +314,11 @@ namespace PlayerMovement {
                     transform.position = positionToMoveTo;
 
                     // We've landed on a corner or hit our head on a ledge. Nudge the player gently
-                    if (i == 1)
+                    if (i <= 1)
                     {
                         if (currentVerticalSpeed < 0) currentVerticalSpeed = 0;
                         var dir = transform.position - hit.bounds.center;
-                        transform.position += dir.normalized * move.magnitude * 2;
+                        transform.position += dir.normalized * move.magnitude * nudgeAmount;
                     }
 
                     return;
