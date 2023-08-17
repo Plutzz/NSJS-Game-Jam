@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace Pathfinding {
 	/// <summary>
@@ -18,6 +19,7 @@ namespace Pathfinding {
 		public Transform target;
 		IAstarAI ai;
 
+
 		void OnEnable () {
 			ai = GetComponent<IAstarAI>();
 			// Update the destination right before searching for a path as well.
@@ -35,5 +37,7 @@ namespace Pathfinding {
 		void Update () {
 			if (target != null && ai != null) ai.destination = target.position;
 		}
+
+
 	}
 }
