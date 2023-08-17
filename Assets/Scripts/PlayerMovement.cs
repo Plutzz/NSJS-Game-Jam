@@ -27,8 +27,13 @@ namespace PlayerMovement {
         {
             if (!_active) return;
 
+            if (PauseMenu.getGameIsPaused()) return;
+            
+
             Velocity = (transform.position - lastPosition) / Time.deltaTime;
             lastPosition = transform.position;
+
+          
 
             GatherInput();
             RunCollisionChecks();
