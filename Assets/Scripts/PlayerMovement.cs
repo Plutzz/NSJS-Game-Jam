@@ -1,29 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float acceleration = 20f;
-    public float deceleration = 20f;
-    public float jumpForce = 10f;
-    public float variableJumpMultiplier = 0.5f;
-    public float maxJumpDuration = 0.2f;
-    public float coyoteTimeDuration = 0.1f;
-    public float maxFallSpeed = -10f;
-    public float jumpApexDuration = 0.2f;
-    public float jumpApexHangTime = 0.1f;
-    public Transform groundCheck;
-    public LayerMask groundLayer;
+    [Header("WALKING")]
+    [SerializeField] private float maxSpeed = 5f;            // Base movement speed
+    [SerializeField] private float acceleration = 10f;        // Acceleration factor
+    [SerializeField] private float deceleration = 10f;        // Deceleration factor
+    [SerializeField] private Transform groundCheck;           // Transform of an object at the character's feet
+    [SerializeField] private Vector2 groundCheckSize = new Vector2(0.5f, 0.1f); // Size of the ground check
+    [SerializeField] private LayerMask groundLayer;           // Layer mask for the ground
+
+    [Header("JUMPING")][SerializeField] private float jumpHeight = 30;
+    [SerializeField] private float jumpApexThreshold = 10f;
+    [SerializeField] private float coyoteTimeThreshold = 0.1f;
+    [SerializeField] private float jumpBuffer = 0.1f;
+    [SerializeField] private float jumpEndEarlyGravityModifier = 3;
+
+    [Header("GRAVITY")]
+    [SerializeField] private float minFallSpeed = 1f;
+    [SerializeField] private float maxFallSpeed = 3f;
+    [SerializeField] private float fallClamp = -40f;
 
     private Rigidbody2D rb;
-    private bool isGrounded;
-    private bool isJumping;
-    private float jumpStartTime;
-    private bool coyoteTimeActive;
-    private float coyoteTimeStart;
-    private float moveInput;
+    private float targetVelocityX = 0f;
+    private float currentVelocityX = 0f;
+    private float timeLeftGrounded;
+    private float fallSpeed;
+
+
+    private bool coyoteUsable;
+    private bool endedJumpEarly = true;
+    private float apexPoint; // Becomes 1 at the apex of a jump
+    private float lastJumpPressed;
+    private float currentVelocityY;
+    private bool CanUseCoyote => coyoteUsable && !IsGrounded && timeLeftGrounded + coyoteTimeThreshold > Time.time;
+    private bool HasBufferedJump => IsGrounded && lastJumpPressed + jumpBuffer > Time.time;
+    public bool JumpingThisFrame {get; private set; }
+    public float XAxis { get; private set; }
+    public bool JumpDown { get; private set; }
+    public bool JumpUp { get; private set; }
+    public bool IsGrounded { get; private set; }
 
     private void Start()
     {
@@ -32,77 +49,141 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        // Check if the player is grounded
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
+        if(rb == null) return;
 
-        // Input handling
-        moveInput = Input.GetAxis("Horizontal");
+        // Get input for movement
+        GetInputs();
+        GroundCheck();
+        // Calculate horizontal movement
+        CalculateWalk();
 
-        // Coyote time logic
-        if (isGrounded)
+        // Calculate Vertical movement
+        CalculateGravity();
+        CalculateJumpApex();
+        CalculateJump();
+
+        // Update the Rigidbody2D velocity
+        Move();
+
+
+
+        Debug.Log(IsGrounded);
+
+
+        // Flip character sprite if moving left
+        if (XAxis < 0)
         {
-            coyoteTimeActive = true;
-            coyoteTimeStart = Time.time;
+            transform.localScale = new Vector3(-1f, 1f, 1f);
         }
-        else if (Time.time - coyoteTimeStart > coyoteTimeDuration)
+        // Flip character sprite if moving right
+        else if (XAxis > 0)
         {
-            coyoteTimeActive = false;
-        }
-
-        if (isGrounded && Input.GetButtonDown("Jump"))
-        {
-            Jump();
-        }
-
-        if (Input.GetButtonUp("Jump"))
-        {
-            EndJump();
+            transform.localScale = new Vector3(1f, 1f, 1f);
         }
     }
 
-    private void FixedUpdate()
+    private void GetInputs()
     {
-        // Apply acceleration and deceleration
-        float targetVelocity = moveInput * moveSpeed;
+        // Get input for movement
+        XAxis = Input.GetAxis("Horizontal");
+        JumpDown = Input.GetButtonDown("Jump");
+        JumpUp = Input.GetButtonUp("Jump");
+    }
 
-        if (isGrounded)
+    private void CalculateWalk()
+    {
+
+        if(XAxis > 0)
         {
-            rb.velocity = new Vector2(Mathf.MoveTowards(rb.velocity.x, targetVelocity, acceleration * Time.fixedDeltaTime), rb.velocity.y);
+            targetVelocityX = XAxis * maxSpeed;
+            currentVelocityX = Mathf.MoveTowards(currentVelocityX, targetVelocityX, acceleration * Time.deltaTime);
+        }
+
+        else if(XAxis < 0)
+        {
+            targetVelocityX = XAxis * maxSpeed;
+            currentVelocityX = Mathf.MoveTowards(currentVelocityX, targetVelocityX, acceleration * Time.deltaTime);
+        }
+        
+        else
+        {
+            targetVelocityX = 0f;
+            currentVelocityX = Mathf.MoveTowards(currentVelocityX, targetVelocityX, deceleration * Time.deltaTime);
+        }
+
+    }
+
+    private void GroundCheck()
+    {
+        IsGrounded = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, groundLayer);
+    }
+
+    private void Move()
+    {
+        rb.velocity = new Vector2(currentVelocityX, currentVelocityY);
+    }
+    private void CalculateJumpApex()
+    {
+        if (!IsGrounded)
+        {
+            // Gets stronger the closer to the top of the jump
+            apexPoint = Mathf.InverseLerp(jumpApexThreshold, 0, Mathf.Abs(rb.velocity.y));
+            fallSpeed = Mathf.Lerp(minFallSpeed, maxFallSpeed, apexPoint);
         }
         else
         {
-            rb.velocity = new Vector2(Mathf.MoveTowards(rb.velocity.x, targetVelocity, deceleration * Time.fixedDeltaTime), rb.velocity.y);
-        }
-
-        // Apply max fall speed
-        if (rb.velocity.y < maxFallSpeed)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, maxFallSpeed);
+            apexPoint = 0;
         }
     }
 
-    private void Jump()
+    private void CalculateJump()
     {
-        if (coyoteTimeActive)
+        // Jump if: grounded or within coyote threshold || sufficient jump buffer
+        if (JumpDown && IsGrounded || HasBufferedJump)
         {
-            isJumping = true;
-            jumpStartTime = Time.time;
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            currentVelocityY = jumpHeight;
+            endedJumpEarly = false;
+            coyoteUsable = false;
+            timeLeftGrounded = float.MinValue;
+            JumpingThisFrame = true;
+        }
+        else
+        {
+            JumpingThisFrame = false;
+        }
+
+        // End the jump early if button released
+        if (!IsGrounded && JumpUp && !endedJumpEarly && rb.velocity.y > 0)
+        {
+            // _currentVerticalSpeed = 0;
+            endedJumpEarly = true;
         }
     }
 
-    private void EndJump()
+    private void CalculateGravity()
     {
-        if (isJumping)
+        if (IsGrounded)
         {
-            isJumping = false;
+            // Move out of the ground
+            if (currentVelocityY < 0) currentVelocityY = 0;
+        }
+        else
+        {
+            // Add downward force while ascending if we ended the jump early
+            var _fallSpeed = endedJumpEarly && currentVelocityY > 0 ? fallSpeed * jumpEndEarlyGravityModifier : fallSpeed;
 
-            float timeSinceJumpStart = Time.time - jumpStartTime;
+            // Fall
+            currentVelocityY -= _fallSpeed * Time.deltaTime;
 
-            if (rb.velocity.y > 0 && timeSinceJumpStart < maxJumpDuration)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * variableJumpMultiplier);
-            }
+            // Clamp
+            if (currentVelocityY < fallClamp) currentVelocityY = fallClamp;
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(groundCheck.position, new Vector3(groundCheckSize.x, groundCheckSize.y, 0.1f));
+    }
+
 }

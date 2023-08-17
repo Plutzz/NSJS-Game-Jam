@@ -528,7 +528,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -585,10 +585,11 @@ GameObject:
   m_Component:
   - component: {fileID: 450739109934308824}
   - component: {fileID: 1843698019}
+  - component: {fileID: 584409317}
+  - component: {fileID: 6453573580335372017}
   - component: {fileID: 622247745}
   - component: {fileID: 584409316}
   - component: {fileID: 584409318}
-  - component: {fileID: 584409317}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -633,6 +634,51 @@ MonoBehaviour:
   spawnPoint: {fileID: 1615686324}
   melee: {fileID: 2094960492}
   attackType: 0
+--- !u!114 &584409317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450739109934308831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f78d21a30cc8842b2b76b5847104aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 7
+  acceleration: 100
+  deceleration: 100
+  groundCheck: {fileID: 2120319380}
+  groundCheckSize: {x: 0.5, y: 0.1}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  jumpHeight: 20
+  jumpApexThreshold: 10
+  coyoteTimeThreshold: 0.1
+  jumpBuffer: 0.1
+  jumpEndEarlyGravityModifier: 3
+  minFallSpeed: 50
+  maxFallSpeed: 100
+  fallClamp: -40
+--- !u!114 &6453573580335372017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450739109934308831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 956e7ae23109fd04da722ee1fe795255, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1020777005}
+  jumpParticles: {fileID: 0}
+  launchParticles: {fileID: 0}
+  moveParticles: {fileID: 0}
+  landParticles: {fileID: 0}
 --- !u!114 &622247745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -727,7 +773,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 1763837b75d2eec4e8fe04928c7188ad, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -759,21 +805,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.76, y: 0.97}
   m_EdgeRadius: 0
---- !u!114 &584409317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 450739109934308831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1f78d21a30cc8842b2b76b5847104aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  jumpForce: 10
-  groundCheck: {fileID: 2120319380}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
