@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c382e125705a8a4cb95a08fb59fa044, type: 3}
   m_Name: 02_Salt-Shaker
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 2
   DisplayName: Salt-Shaker
   Sprite: {fileID: -852706718, guid: 93de09b1fac9a644d81eef7442ed6e73, type: 3}
   CurseTaken: 0

@@ -65,7 +65,6 @@ public class Timer : MonoBehaviour
     public event Action onCurseTime;
     public void CurseTime()
     {
-        Debug.Log("ITS CURSE TIME");
         if(onCurseTime != null)
         {
             onCurseTime();

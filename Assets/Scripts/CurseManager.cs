@@ -4,14 +4,19 @@ using System;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using Unity.Mathematics;
+using Random = UnityEngine.Random;
+using static UnityEditor.Progress;
 
 public class CurseManager : MonoBehaviour
 {
     [SerializeField] private GameObject curseMenu;
-    [SerializeField] private Button[] buttons;
+    [SerializeField] private CurseButton[] curseButtons;
     public static CurseManager instance;
     public Dictionary<int, Curse> CurseDictionary;
     private List<Curse> possibleCurses = new List<Curse>();
+    private List<Curse> tempPossibleCurses = new List<Curse>();
+    private GameObject[] childs;
 
     private void Awake()
     {
@@ -24,8 +29,20 @@ public class CurseManager : MonoBehaviour
         {
             CurseDictionary.Add(item.ID, item);
 
-            if (!item.CurseTaken) possibleCurses.Add(item);
+            if (!item.CurseTaken)
+            {
+                possibleCurses.Add(item);
+                tempPossibleCurses.Add(item);
+            }
         }
+
+        foreach (var item in tempPossibleCurses)
+        {
+            Debug.Log(item);
+        }
+
+
+
     }
 
     private void Start()
@@ -34,17 +51,35 @@ public class CurseManager : MonoBehaviour
     }
     public void OpenMenu()
     {
-        curseMenu.SetActive(true);
-        PauseMenu.Instance.Pause();
+        RollCurses();
+
+        foreach (var curseButton in curseButtons) //Loop trough childs unity array
+        {
+            curseButton.gameObject.SetActive(true);
+        }
+            PauseMenu.Instance.Pause();
         
     }
 
     public void CloseMenu()
     {
-        curseMenu.SetActive(false);
+        foreach (var curseButton in curseButtons) //Loop trough childs unity array
+        {
+            curseButton.gameObject.SetActive(false);
+        }
         PauseMenu.Instance.Resume();
     }
 
+    public void RollCurses()
+    {
+        foreach(var curseButton in curseButtons)
+        {
+            int _index = Random.Range(0, tempPossibleCurses.Count);
+            Debug.Log(_index);
+            curseButton.currentCurse = tempPossibleCurses[_index];
+            tempPossibleCurses.RemoveAt(_index);
+        }
+    }
 
 
     [Header("Cardboard Box")]
@@ -71,7 +106,18 @@ public class CurseManager : MonoBehaviour
 
     public void TakeCurse(int _id)
     {
-        switch(_id)
+        CurseDictionary.TryGetValue(_id, out Curse _curseTaken);
+        possibleCurses.Remove(_curseTaken);
+        tempPossibleCurses.Clear();
+
+        foreach (var curse in possibleCurses)
+        {
+            tempPossibleCurses.Add(curse);
+        }
+
+        CloseMenu();
+
+        switch (_id)
         {
             case 1:
                 // Cardboard box: -enemy attack range, -player movement speed

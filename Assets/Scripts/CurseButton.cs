@@ -5,17 +5,21 @@ using UnityEngine.UI;
 
 public class CurseButton : MonoBehaviour
 {
-    [SerializeField] private Curse currentCurse;
+    public Curse currentCurse;
     private Image image;
-    private void Start()
+    private void Awake()
     {
         image = GetComponent<Image>();
+    }
+    private void OnEnable()
+    {
         image.sprite = currentCurse.Sprite;
     }
 
-    private void Update()
+    public void TakeCurse()
     {
-        
+        Debug.Log(currentCurse + "Taken");
+        CurseManager.instance.TakeCurse(currentCurse.ID);
     }
 
 

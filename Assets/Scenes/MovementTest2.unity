@@ -215,9 +215,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1406463687}
   - {fileID: 351642508}
   - {fileID: 1310237759}
+  - {fileID: 390775375}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -245,7 +245,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &74877723
 RectTransform:
   m_ObjectHideFlags: 0
@@ -253,17 +253,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74877722}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -2.6309037}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1406463687}
+  m_Father: {fileID: 390775375}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: 2}
+  m_AnchoredPosition: {x: -20, y: -10}
   m_SizeDelta: {x: 285, y: 375}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &74877724
@@ -310,9 +310,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 390775376}
-        m_TargetAssemblyTypeName: CurseManager, Assembly-CSharp
-        m_MethodName: CloseMenu
+      - m_Target: {fileID: 74877727}
+        m_TargetAssemblyTypeName: CurseButton, Assembly-CSharp
+        m_MethodName: TakeCurse
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b26d64ab17480c54d810ca668978c146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCurse: {fileID: 11400000, guid: d286be7424fb8e04fbef7b9f3ea245b5, type: 2}
+  currentCurse: {fileID: 0}
 --- !u!1001 &191146168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -382,7 +382,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4695812399787036564, guid: a83385f4f9e2c8348b76a8abca979ab1, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4695812399787036564, guid: a83385f4f9e2c8348b76a8abca979ab1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10055,7 +10055,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 44503071}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10101,12 +10101,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390775374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 588.5097, y: 304.8513, z: 2.6309037}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Children:
+  - {fileID: 1341966421}
+  - {fileID: 74877723}
+  - {fileID: 744668593}
+  m_Father: {fileID: 44503071}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &390775376
 MonoBehaviour:
@@ -10120,8 +10123,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ef2f01213397974e8a7a18e657f0fbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curseMenu: {fileID: 1406463686}
-  buttons: []
+  curseMenu: {fileID: 0}
+  curseButtons:
+  - {fileID: 1341966425}
+  - {fileID: 74877727}
+  - {fileID: 744668597}
   enemyAttackRangeDown: 0
   playerMovementSpeedDown: 0
   playerDamageDown: 0
@@ -10212,7 +10218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &744668593
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10220,17 +10226,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744668592}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -2.6309037}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1406463687}
+  m_Father: {fileID: 390775375}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 358, y: 1}
+  m_AnchoredPosition: {x: 354, y: -5}
   m_SizeDelta: {x: 285, y: 375}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &744668594
@@ -10277,9 +10283,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 390775376}
-        m_TargetAssemblyTypeName: CurseManager, Assembly-CSharp
-        m_MethodName: CloseMenu
+      - m_Target: {fileID: 744668597}
+        m_TargetAssemblyTypeName: CurseButton, Assembly-CSharp
+        m_MethodName: TakeCurse
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10339,7 +10345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b26d64ab17480c54d810ca668978c146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCurse: {fileID: 11400000, guid: 6a1e715682dc65246a2984072f8b8fde, type: 2}
+  currentCurse: {fileID: 0}
 --- !u!1 &775707617
 GameObject:
   m_ObjectHideFlags: 0
@@ -10478,7 +10484,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 450739109934308824, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 450739109934308824, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10625,7 +10631,7 @@ RectTransform:
   m_Children:
   - {fileID: 222167929}
   m_Father: {fileID: 44503071}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10644,7 +10650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2e9fc9f1217f0946b2c71f02649433f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timePerCurse: 30
+  timePerCurse: 5
   TimerOn: 1
   TimerTxt: {fileID: 222167930}
 --- !u!1 &1341966420
@@ -10666,7 +10672,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1341966421
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10674,17 +10680,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341966420}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -2.6309037}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1406463687}
+  m_Father: {fileID: 390775375}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -348, y: 1}
+  m_AnchoredPosition: {x: -358, y: -10}
   m_SizeDelta: {x: 285, y: 375}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1341966422
@@ -10731,9 +10737,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 390775376}
-        m_TargetAssemblyTypeName: CurseManager, Assembly-CSharp
-        m_MethodName: CloseMenu
+      - m_Target: {fileID: 1341966425}
+        m_TargetAssemblyTypeName: CurseButton, Assembly-CSharp
+        m_MethodName: TakeCurse
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10793,46 +10799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b26d64ab17480c54d810ca668978c146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCurse: {fileID: 11400000, guid: 730d32925b0b2774aa803d4a3c6caf76, type: 2}
---- !u!1 &1406463686
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1406463687}
-  m_Layer: 5
-  m_Name: CurseMenu
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1406463687
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1406463686}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1341966421}
-  - {fileID: 74877723}
-  - {fileID: 744668593}
-  m_Father: {fileID: 44503071}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  currentCurse: {fileID: 0}
 --- !u!1 &1545354568
 GameObject:
   m_ObjectHideFlags: 0
