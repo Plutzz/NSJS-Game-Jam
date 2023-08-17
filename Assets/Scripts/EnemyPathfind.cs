@@ -4,11 +4,12 @@ using UnityEngine;
 using Pathfinding;
 using UnityEditor.Rendering;
 
-public class Skull : Enemy
+public class EnemyPathfind : MonoBehaviour
 {
     
 
     public float NextWayPointDistance;
+    public float movementSpeed = 500f;
 
     private AIPath aiPath;
     private Transform target;
@@ -18,16 +19,18 @@ public class Skull : Enemy
     private bool reachedEndOfPath = false;
     private Seeker seeker;
     private Rigidbody2D rb;
+    private GameObject player;
+    private Transform enemyGraphics;
 
-
-    public override void Start()
+    public void Start()
     {
+        player = PlayerController.playerController.gameObject;
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         player = PlayerController.playerController.gameObject;
         target = player.transform;
-        seeker.StartPath(new Vector3(0,0,0), target.position, OnPathComplete);
-        Debug.Log(movementSpeed);
+        enemyGraphics = GetComponentInChildren<Transform>();
+        InvokeRepeating("UpdatePath", 0f, .5f);
     }
 
     private void OnPathComplete(Path p)
@@ -63,6 +66,23 @@ public class Skull : Enemy
         if(distance < NextWayPointDistance)
         {
             currentWaypoint++;
+        }
+
+        if(force.x >= 0.01f)
+        {
+            enemyGraphics.transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if(force.x <= -0.01f)
+        {
+            enemyGraphics.transform.localScale = new Vector3(1, 1, 1);
+        }
+    }
+
+    void UpdatePath()
+    {
+        if(seeker.IsDone())
+        {
+            seeker.StartPath(transform.position, target.position, OnPathComplete);
         }
     }
 }
