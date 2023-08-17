@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ca90f61037b1a4f4e86f7f4c8119619e
+guid: 5f9e52176d6d5b94eb00a26158c9a8e5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,11 +117,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Salt_shaker_0
+      name: Path_of_the_wind_god_0
       rect:
         serializedVersion: 2
-        x: 121
-        y: 107
+        x: 119
+        y: 108
         width: 267
         height: 359
       alignment: 0
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21f085f944fb4ba42bc322f036c47527
-      internalID: 2068768119
+      spriteID: a42e330cce504c342bf0c8592b16da54
+      internalID: -1108723418
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Salt_shaker_0: 2068768119
+      Path_of_the_wind_god_0: -1108723418
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
