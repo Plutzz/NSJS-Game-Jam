@@ -11,12 +11,13 @@ using static UnityEditor.Progress;
 public class CurseManager : MonoBehaviour
 {
     [SerializeField] private GameObject curseMenu;
-    [SerializeField] private CurseButton[] curseButtons;
+    [SerializeField] private List<CurseButton> curseButtons;
     public static CurseManager instance;
     public Dictionary<int, Curse> CurseDictionary;
     private List<Curse> possibleCurses = new List<Curse>();
     private List<Curse> tempPossibleCurses = new List<Curse>();
     private GameObject[] childs;
+    private int numButtons;
 
     private void Awake()
     {
@@ -51,6 +52,26 @@ public class CurseManager : MonoBehaviour
     }
     public void OpenMenu()
     {
+        if(possibleCurses.Count >= 3)
+        {
+            numButtons = 3;
+        }
+        else if(possibleCurses.Count == 2)
+        {
+            numButtons = 2;
+            curseButtons.RemoveAt(2);
+        }
+        else if(possibleCurses.Count == 1)
+        {
+            numButtons = 1;
+            curseButtons.RemoveAt(0);
+        }
+        else
+        {
+            return; //Skips curse menu if all curses are taken
+        }
+
+
         RollCurses();
 
         foreach (var curseButton in curseButtons) //Loop trough childs unity array
@@ -72,6 +93,7 @@ public class CurseManager : MonoBehaviour
 
     public void RollCurses()
     {
+
         foreach(var curseButton in curseButtons)
         {
             int _index = Random.Range(0, tempPossibleCurses.Count);
@@ -115,8 +137,6 @@ public class CurseManager : MonoBehaviour
             tempPossibleCurses.Add(curse);
         }
 
-        CloseMenu();
-
         switch (_id)
         {
             case 1:
@@ -136,9 +156,9 @@ public class CurseManager : MonoBehaviour
                 break;
             case 6:
                 // Roller Skates: +Movement Speed, slide instead of stopping
-                break;
-
+                break;  
         }
+        CloseMenu();
     }
 
 
