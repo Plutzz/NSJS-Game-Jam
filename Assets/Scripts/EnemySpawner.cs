@@ -6,14 +6,22 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
-    private GameObject swarmerPrefab;
+    private GameObject Enemy1;
     [SerializeField]
-    private GameObject bigSwarmerPrefab;
+    private GameObject Enemy2;
+    [SerializeField]
+    private GameObject Enemy3;
+    [SerializeField]
+    private GameObject Enemy4;
 
     [SerializeField]
-    private float swarmerInterval = 3.5f;
+    private float Enemy1Interval = 3.5f;
     [SerializeField]
-    private float bigSwarmerInterval = 10f;
+    private float Enemy2Interval = 10f;
+    [SerializeField]
+    private float Enemy3Interval = 3.5f;
+    [SerializeField]
+    private float Enemy4Interval = 10f;
 
     [SerializeField]
     private float playerSafeRadius = 5f;
@@ -23,8 +31,10 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(spawnEnemy(swarmerInterval, swarmerPrefab));
-        StartCoroutine(spawnEnemy(bigSwarmerInterval, bigSwarmerPrefab));
+        StartCoroutine(spawnEnemy(Enemy1Interval, Enemy1));
+        StartCoroutine(spawnEnemy(Enemy2Interval, Enemy2));
+        StartCoroutine(spawnEnemy(Enemy3Interval, Enemy3));
+        StartCoroutine(spawnEnemy(Enemy4Interval, Enemy4));
     }
 
     // Update is called once per frame
