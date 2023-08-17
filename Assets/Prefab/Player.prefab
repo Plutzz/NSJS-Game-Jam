@@ -761,7 +761,7 @@ MonoBehaviour:
   acceleration: 100
   deceleration: 100
   groundCheck: {fileID: 2120319380}
-  groundCheckSize: {x: 0.75, y: 0.1}
+  groundCheckSize: {x: 0.725, y: 0.1}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
