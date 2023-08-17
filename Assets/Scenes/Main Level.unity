@@ -36098,11 +36098,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 584409317, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
       propertyPath: groundCheckSize.x
-      value: 0.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 2120319380, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 450739109934308824, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
       propertyPath: m_RootOrder
