@@ -7,6 +7,7 @@ public class Enemy : DamageableEntity
 {
     [SerializeField] private float movementSpeed;
     [SerializeField] private float damage;
+    [SerializeField] private float chaseRange;
     private GameObject player;
 
     private float distance;
@@ -24,6 +25,21 @@ public class Enemy : DamageableEntity
         distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, movementSpeed * Time.deltaTime);
+    }
+
+    public virtual void Patrol()
+    {
+
+    }
+
+    public virtual bool CheckPlayerIsInChaseRange()
+    {
+        float distance = (player.transform.position - transform.position).magnitude;
+
+        if (distance > chaseRange) return false;
+
+        return true;
+
     }
 
     public override void Die()
