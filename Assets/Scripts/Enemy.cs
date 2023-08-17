@@ -7,11 +7,14 @@ public class Enemy : DamageableEntity
 {
     [SerializeField] private float movementSpeed;
     [SerializeField] private float damage;
-    [SerializeField] private GameObject player;
+    private GameObject player;
 
     private float distance;
 
-
+    public virtual void Awake()
+    {
+        player = PlayerController.playerController.gameObject;
+    }
 
 
 

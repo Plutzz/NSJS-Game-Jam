@@ -15,7 +15,12 @@ public class PlayerController : MonoBehaviour
     public bool StartAttackThisFrame { get; private set; }
     public bool CanAttack { get; private set; }
 
+    public static PlayerController playerController;
 
+    private void Awake()
+    {
+        playerController = this;
+    }
     private void Start()
     {
         CanAttack = true;
