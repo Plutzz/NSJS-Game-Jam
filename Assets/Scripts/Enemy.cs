@@ -25,4 +25,10 @@ public class Enemy : DamageableEntity
         Vector2 direction = player.transform.position - transform.position;
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, movementSpeed * Time.deltaTime);
     }
+
+    public override void Die()
+    {
+        EnemySpawner.numEnemies--;
+        Destroy(gameObject);
+    }
 }

@@ -42,6 +42,7 @@ public class EnemySpawner : MonoBehaviour
         if(_distanceFromPlayer > playerSafeRadius)
         {
             GameObject newEnemy = Instantiate(enemy, _spawnPoint, Quaternion.identity);
+            numEnemies++;
         }
         StartCoroutine(spawnEnemy(interval, enemy));
     }
