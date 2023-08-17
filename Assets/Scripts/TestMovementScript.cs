@@ -270,7 +270,7 @@ namespace MovementController
                 _endedJumpEarly = true;
             }
 
-            if (_colUp)
+            if (_colUp) //*********
             {
                 if (_currentVerticalSpeed > 0) _currentVerticalSpeed = 0;
             }

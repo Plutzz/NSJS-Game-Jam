@@ -9,17 +9,19 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField] private ParticleSystem jumpParticles, launchParticles;
     [SerializeField] private ParticleSystem moveParticles, landParticles;
 
-    private Rigidbody rb;
+    private Rigidbody2D rb;
     private float xVelocity;
     private float yVelocity;
     private ParticleSystem.MinMaxGradient currentGradient;
     private PlayerController playerController;
+    private PlayerMovement playerMovement;
 
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
-        playerController = GetComponentInParent<PlayerController>();
+        rb = GetComponent<Rigidbody2D>();
+        playerController = GetComponent<PlayerController>();
+        playerMovement = GetComponent<PlayerMovement>();
         currentGradient = new ParticleSystem.MinMaxGradient(Color.cyan);
     }
 
@@ -48,7 +50,7 @@ public class PlayerAnimator : MonoBehaviour
             anim.SetBool("Moving", false);
         }
 
-        if (yVelocity == 0)
+        if (yVelocity == 0 && playerMovement.IsGrounded)
         {
             anim.SetBool("Jumping", false);
         }
