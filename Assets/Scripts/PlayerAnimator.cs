@@ -1,4 +1,4 @@
-using MovementController;
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,26 +9,26 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField] private ParticleSystem jumpParticles, launchParticles;
     [SerializeField] private ParticleSystem moveParticles, landParticles;
 
+    private Rigidbody rb;
     private float xVelocity;
     private float yVelocity;
     private ParticleSystem.MinMaxGradient currentGradient;
-    private IPlayerController player;
     private PlayerController playerController;
 
 
     private void Awake()
     {
-        player = GetComponentInParent<IPlayerController>();
+        rb = GetComponent<Rigidbody>();
         playerController = GetComponentInParent<PlayerController>();
         currentGradient = new ParticleSystem.MinMaxGradient(Color.cyan);
     }
 
     private void Update()
     {
-        xVelocity = player.Input.X;
-        yVelocity = player.Velocity.y;
+        xVelocity = rb.velocity.x;
+        yVelocity = rb.velocity.y;
 
-        if (player == null) return;
+        if (rb == null) return;
 
         // Flip sprite
 
@@ -60,7 +60,7 @@ public class PlayerAnimator : MonoBehaviour
         anim.SetFloat("VerticalVelocity", yVelocity);
 
 
-        if(player.JumpingThisFrame)
+        if(true)
         {
             //Debug.Log("Jump Particles");
             //Instantiate(jumpParticles);
