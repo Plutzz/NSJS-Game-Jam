@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4774259467214279738}
   - component: {fileID: -7010702339998508633}
-  - component: {fileID: 5255519311101349981}
   - component: {fileID: 2370409659119149598}
   m_Layer: 0
   m_Name: Bat
@@ -61,21 +60,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 2.56}
   m_EdgeRadius: 0
---- !u!114 &5255519311101349981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1651767155577364508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69280d5178775104aa91d17645b51f0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  speed: 0
-  distance: 0
 --- !u!114 &2370409659119149598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,6 +156,6 @@ SpriteRenderer:
   m_Size: {x: 2.56, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

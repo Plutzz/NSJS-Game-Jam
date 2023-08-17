@@ -52,18 +52,12 @@ public class CurseManager : MonoBehaviour
     }
     public void OpenMenu()
     {
-        if(possibleCurses.Count >= 3)
+        if(possibleCurses.Count == 2)
         {
-            numButtons = 3;
-        }
-        else if(possibleCurses.Count == 2)
-        {
-            numButtons = 2;
             curseButtons.RemoveAt(2);
         }
         else if(possibleCurses.Count == 1)
         {
-            numButtons = 1;
             curseButtons.RemoveAt(0);
         }
         else
@@ -156,7 +150,7 @@ public class CurseManager : MonoBehaviour
                 break;
             case 6:
                 // Roller Skates: +Movement Speed, slide instead of stopping
-                break;  
+                break;   
         }
         CloseMenu();
     }

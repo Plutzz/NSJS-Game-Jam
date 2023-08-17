@@ -19,7 +19,7 @@ public class Enemy : DamageableEntity
 
 
 
-    public virtual void GhostFollow()
+    public virtual void GhostChase()
     {
         distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;

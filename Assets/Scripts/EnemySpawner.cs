@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -13,6 +14,11 @@ public class EnemySpawner : MonoBehaviour
     private float swarmerInterval = 3.5f;
     [SerializeField]
     private float bigSwarmerInterval = 10f;
+
+    [SerializeField]
+    private float playerSafeRadius = 5f;
+
+    public static int numEnemies; //Increment when spawn, decrement it when enemy is killed
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +36,13 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator spawnEnemy(float interval, GameObject enemy)
     {
         yield return new WaitForSeconds(interval);
-        GameObject newEnemy = Instantiate(enemy, transform.position + new Vector3(Random.Range(-5f, 5), Random.Range(-6f, 6f), 0), Quaternion.identity);
+        Vector3 _spawnPoint = new Vector3(0, 0, 0) + transform.position;
+        float _distanceFromPlayer = (PlayerController.playerController.gameObject.transform.position - _spawnPoint).magnitude;
+        
+        if(_distanceFromPlayer > playerSafeRadius)
+        {
+            GameObject newEnemy = Instantiate(enemy, _spawnPoint, Quaternion.identity);
+        }
         StartCoroutine(spawnEnemy(interval, enemy));
     }
 }

@@ -6,6 +6,6 @@ public class BoxGhost : Enemy
 {
    private void Update()
     {
-        GhostFollow();
+        GhostChase();
     }
 }
