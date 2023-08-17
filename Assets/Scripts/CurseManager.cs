@@ -40,20 +40,18 @@ public class CurseManager : MonoBehaviour
     [SerializeField] private float playerDamageDown;
 
     [Header("Whack the ripper")]
-    [SerializeField] private float healthRegen;
+    [SerializeField] private float lifeSteal;
+    [SerializeField] private float damageOverTime;
+
+    [Header("Path of the wind god")]
+    [SerializeField] private float playerMovementSpeedUp1;
     [SerializeField] private float playerMovementSpeedDebuff;
 
-    [Header("Cardboard Box")]
-    [SerializeField] private float enemyAttackRangeDebuff;
-    [SerializeField] private float playerMovementSpeedDebuff;
+    [Header("Muffin Attack")]
 
-    [Header("Cardboard Box")]
-    [SerializeField] private float enemyAttackRangeDebuff;
-    [SerializeField] private float playerMovementSpeedDebuff;
-
-    [Header("Cardboard Box")]
-    [SerializeField] private float enemyAttackRangeDebuff;
-    [SerializeField] private float playerMovementSpeedDebuff;
+    [Header("Roller Skates")]
+    [SerializeField] private float slideAmount;
+    [SerializeField] private float playerMovementSpeedUp2;
 
 
     public void TakeCurse(int _id)
@@ -67,7 +65,7 @@ public class CurseManager : MonoBehaviour
                 // Salt Shaker: gain ranged attack, lose melee attack, -dmg
                 break;
             case 3:
-                // Whack the ripper: +health regen, -health over time
+                // Whack the ripper: +lifesteal, -health over time
                 break;
             case 4:
                 // Path of the wind god: +Movement Speed, +Attack Speed, -health, -attack damage

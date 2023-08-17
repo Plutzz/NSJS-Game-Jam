@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float attackTimer;
-    [SerializeField] private AnimationClip attackAnim;
+    [SerializeField] private AnimationClip projectileAttackAnim;
+    [SerializeField] private AnimationClip meleeAttackAnim;
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject spawnPoint;
+    [SerializeField] private GameObject melee;
 
     public int attackType;
     public bool StartAttackThisFrame { get; private set; }
@@ -35,25 +37,33 @@ public class PlayerController : MonoBehaviour
     {
         if(attackType == 0)
         {
-            //Melee attack
+            Debug.Log("Melee attack");
+            melee.SetActive(true);
+            StartCoroutine(MeleeAttackActive(meleeAttackAnim.length));
         }
         else if (attackType == 1)
         {
             Instantiate(projectile, spawnPoint.transform.position, spawnPoint.transform.rotation); //Ranged attack
+            StartCoroutine(RangedAttackActive(projectileAttackAnim.length));
         }
         
         StartAttackThisFrame = true;
-        StartCoroutine(AttackActive());
     }
 
-    IEnumerator AttackActive()
+    IEnumerator RangedAttackActive(float waitTime)
     {
         CanAttack = false;
-        yield return new WaitForSeconds(attackAnim.length);
+        yield return new WaitForSeconds(waitTime);
         CanAttack = true;
         yield return null;
-
-
+    }
+    IEnumerator MeleeAttackActive(float waitTime)
+    {
+        CanAttack = false;
+        yield return new WaitForSeconds(waitTime);
+        CanAttack = true;
+        melee.SetActive(false);
+        yield return null;
     }
 
 

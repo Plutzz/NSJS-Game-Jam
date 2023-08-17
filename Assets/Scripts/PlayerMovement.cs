@@ -178,7 +178,7 @@ namespace PlayerMovement {
 
                 // Apply bonus at apex of the jump
                 var _tempApexBonus = Mathf.Sign(Input.X) * apexBonus * apexPoint;
-                currentHorizontalSpeed += _tempApexBonus * Time.deltaTime;
+                currentHorizontalSpeed += _tempApexBonus * movementMultiplier * Time.deltaTime;
             }
 
             else
