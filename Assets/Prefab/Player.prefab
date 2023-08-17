@@ -568,7 +568,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2120319379}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.012, y: -0.412, z: 0}
+  m_LocalPosition: {x: 0, y: -0.534, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -650,7 +650,7 @@ MonoBehaviour:
   acceleration: 100
   deceleration: 100
   groundCheck: {fileID: 2120319380}
-  groundCheckSize: {x: 0.7, y: 0.2}
+  groundCheckSize: {x: 0.5, y: 0.1}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -658,10 +658,10 @@ MonoBehaviour:
   jumpApexThreshold: 10
   coyoteTimeThreshold: 0.1
   jumpBuffer: 0.1
-  jumpEndEarlyGravityModifier: 10
-  minFallSpeed: 40
-  maxFallSpeed: 60
-  fallClamp: -30
+  jumpEndEarlyGravityModifier: 3
+  minFallSpeed: 50
+  maxFallSpeed: 100
+  fallClamp: -40
 --- !u!114 &6453573580335372017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,5 +803,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.76, y: 0.87}
+  m_Size: {x: 0.76, y: 0.97}
   m_EdgeRadius: 0
