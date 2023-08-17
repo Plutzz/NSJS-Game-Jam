@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 3
   DisplayName: Whack-the-Ripper
+  Sprite: {fileID: 296105377, guid: b8541c5d3f2d56b47b57f7fa2f6aaed4, type: 3}
+  CurseTaken: 0

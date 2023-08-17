@@ -8,5 +8,7 @@ public class Curse : ScriptableObject
 {
     public int ID;
     public string DisplayName;
+    public Sprite Sprite;
     public bool CurseTaken;
+
 }

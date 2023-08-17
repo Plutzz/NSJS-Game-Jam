@@ -66,10 +66,6 @@ public class PlayerMovement : MonoBehaviour
         Move();
 
 
-
-        Debug.Log(IsGrounded);
-
-
         // Flip character sprite if moving left
         if (XAxis < 0)
         {

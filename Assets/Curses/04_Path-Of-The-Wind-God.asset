@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c382e125705a8a4cb95a08fb59fa044, type: 3}
-  m_Name: 01_CardboardBox
+  m_Name: 04_Path-Of-The-Wind-God
   m_EditorClassIdentifier: 
-  ID: 1
-  DisplayName: Cardboard Box
-  Sprite: {fileID: 1987846923, guid: c3022c6fe3b9d614e85de09671ac445b, type: 3}
+  ID: 4
+  DisplayName: Path Of The Wind God
+  Sprite: {fileID: -1108723418, guid: 5f9e52176d6d5b94eb00a26158c9a8e5, type: 3}
   CurseTaken: 0

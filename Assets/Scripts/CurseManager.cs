@@ -3,16 +3,31 @@ using System.Collections.Generic;
 using System;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CurseManager : MonoBehaviour
 {
     [SerializeField] private GameObject curseMenu;
+    [SerializeField] private Button[] buttons;
     public static CurseManager instance;
+    public Dictionary<int, Curse> CurseDictionary;
+    private List<Curse> possibleCurses = new List<Curse>();
 
     private void Awake()
     {
         instance = this;
+        CurseDictionary = new Dictionary<int, Curse>();
+
+        var items = Resources.LoadAll<Curse>("Curses");
+        possibleCurses = new List<Curse>();
+        foreach (var item in items)
+        {
+            CurseDictionary.Add(item.ID, item);
+
+            if (!item.CurseTaken) possibleCurses.Add(item);
+        }
     }
+
     private void Start()
     {
         Timer.timer.onCurseTime += OpenMenu;
