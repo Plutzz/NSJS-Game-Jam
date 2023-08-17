@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
 
 public class RangedAttackController : MonoBehaviour
@@ -11,7 +12,7 @@ public class RangedAttackController : MonoBehaviour
 
     private void Start()
     {
-        rb.velocity = Vector3.right * speed;
+        rb.velocity = transform.rotation * new Vector3(0, speed, 0);
     }
 
 

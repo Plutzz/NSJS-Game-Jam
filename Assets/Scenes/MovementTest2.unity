@@ -10048,6 +10048,74 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1020777003, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020777003, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020777003, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615686324, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+      propertyPath: m_Name
+      value: BulletSpawnPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615686325, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615686325, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615686325, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615686325, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615686325, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615686325, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615686325, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615686325, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615686325, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615686325, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615686325, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1843698019, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 7175892937523809108, guid: 7f34f777cb888cf4c9ded6b2213e3946, type: 3}
+    - target: {fileID: 1843698019, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 1873419577}
     - target: {fileID: 450739109934308824, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -11601,6 +11669,11 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &1873419577 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1615686324, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+  m_PrefabInstance: {fileID: 400081717}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2010351162
 PrefabInstance:
   m_ObjectHideFlags: 0

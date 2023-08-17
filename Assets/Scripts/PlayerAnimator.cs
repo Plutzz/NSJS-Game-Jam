@@ -8,7 +8,6 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private ParticleSystem jumpParticles, launchParticles;
     [SerializeField] private ParticleSystem moveParticles, landParticles;
-    [SerializeField] private SpriteRenderer graphics;
 
     private float xVelocity;
     private float yVelocity;
@@ -35,8 +34,8 @@ public class PlayerAnimator : MonoBehaviour
 
         if (xVelocity != 0 && playerController.CanAttack)
         {
-            if (xVelocity > 0) graphics.flipX = false;
-            else graphics.flipX = true;
+            if (xVelocity > 0) transform.localScale = new Vector3(1, 1, 1);
+            else transform.localScale = new Vector3(-1, 1, 1);
         }
         
 
