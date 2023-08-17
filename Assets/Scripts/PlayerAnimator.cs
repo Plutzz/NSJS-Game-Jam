@@ -50,7 +50,7 @@ public class PlayerAnimator : MonoBehaviour
             anim.SetBool("Moving", false);
         }
 
-        if (yVelocity == 0 && playerMovement.IsGrounded)
+        if (playerMovement.IsGrounded)
         {
             anim.SetBool("Jumping", false);
         }
