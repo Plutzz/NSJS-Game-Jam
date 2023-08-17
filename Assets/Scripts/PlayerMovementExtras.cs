@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PlayerMovement
+namespace MovementController
 {
     public struct FrameInput
     {
