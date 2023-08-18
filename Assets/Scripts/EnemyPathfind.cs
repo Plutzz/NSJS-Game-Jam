@@ -10,6 +10,7 @@ public class EnemyPathfind : MonoBehaviour
 
     public float NextWayPointDistance;
     public float movementSpeed = 500f;
+    public bool facingRight;
 
     private AIPath aiPath;
     private Transform target;
@@ -20,6 +21,7 @@ public class EnemyPathfind : MonoBehaviour
     private Rigidbody2D rb;
     private GameObject player;
     private Transform enemyGraphics;
+    
 
     public void Start()
     {
@@ -70,10 +72,12 @@ public class EnemyPathfind : MonoBehaviour
         if(force.x >= 0.01f)
         {
             enemyGraphics.transform.localScale = new Vector3(1, 1, 1);
+            facingRight = true;
         }
         else if(force.x <= -0.01f)
         {
             enemyGraphics.transform.localScale = new Vector3(-1, 1, 1);
+            facingRight = false;
         }
     }
 

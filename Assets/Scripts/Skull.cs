@@ -8,6 +8,7 @@ public class Skull : Enemy
     [SerializeField] private GameObject bullet;
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject bulletSpawnPoint;
+    [SerializeField] private GameObject rotationPoint;
     public override void Start()
     {
         player = PlayerController.playerController.gameObject;
@@ -19,6 +20,17 @@ public class Skull : Enemy
 
         if (CheckPlayerIsInAttackRange())
         {
+            Vector2 direction = player.transform.position - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+            if(!GetComponent<EnemyPathfind>().facingRight)
+            {
+                angle -= 180; 
+            }
+
+            rotationPoint.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+
             Instantiate(bullet, bulletSpawnPoint.transform.position, bulletSpawnPoint.transform.rotation);
             animator.SetBool("Attacking", true);
         }

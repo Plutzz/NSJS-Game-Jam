@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8498666819851601542}
   m_Layer: 0
   m_Name: FlyingFlame
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,6 +51,7 @@ MonoBehaviour:
   damage: 1
   speed: 5
   rb: {fileID: 8498666819851601537}
+  ignoreTag: Enemy
 --- !u!114 &8498666819851601543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,7 +99,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.56, y: 0}
+  m_Offset: {x: 0, y: 0.52}
   serializedVersion: 2
   m_Radius: 0.6
 --- !u!1 &8498666820365592666
