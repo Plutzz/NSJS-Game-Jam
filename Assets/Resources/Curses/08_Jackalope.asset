@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 8
   DisplayName: Jackalope
-  Sprite: {fileID: 942558890, guid: 0b4aa1546faecac43815e437d6effb27, type: 3}
+  Sprite: {fileID: 436651896, guid: f0153b84416b69341aef90f7d3a317f7, type: 3}
   CurseTaken: 0

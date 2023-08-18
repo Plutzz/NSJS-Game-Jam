@@ -25,6 +25,7 @@ public class PlayerHealth : DamageableEntity
     private void Awake()
     {
         instance = this;
+        WhackTheRipper = false;
     }
     private void Start()
     {

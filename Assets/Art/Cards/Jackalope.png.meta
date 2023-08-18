@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0b4aa1546faecac43815e437d6effb27
+guid: f0153b84416b69341aef90f7d3a317f7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5cd3a15d15522648be752adb2e46ecd
-      internalID: 942558890
+      spriteID: 04fe31923ee8caa4d8b5c401ab267faf
+      internalID: 436651896
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Jackalope_0: 942558890
+      Jackalope_0: 436651896
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
