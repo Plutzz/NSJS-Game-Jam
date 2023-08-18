@@ -906,6 +906,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackTimer: 1
+  rangedDamage: 5
+  meleeDamage: 10
   projectileAttackAnim: {fileID: 7400000, guid: 4d4ed237dfb578b42b701a04f668672e, type: 2}
   meleeAttackAnim: {fileID: 7400000, guid: 1d723a6924205324b89bb8a27ea4451a, type: 2}
   meleeUpAttackAnim: {fileID: 7400000, guid: 707ae11a218fcfb4cbe29e9dc3e294b8, type: 2}

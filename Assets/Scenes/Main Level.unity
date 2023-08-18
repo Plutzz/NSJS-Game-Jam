@@ -35247,6 +35247,24 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &335474943 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2094960492, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+  m_PrefabInstance: {fileID: 639579686}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &335474948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335474943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36d977aa1010fd447a21f4af17a18ee7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ignoreTag: Player
 --- !u!1 &342330396 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5929464764405545616, guid: dcdb83a54d8216c4fa7cfe644ae228be, type: 3}
@@ -36916,74 +36934,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 584409317, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
-      propertyPath: jumpBuffer
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1615686325, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.42
-      objectReference: {fileID: 0}
-    - target: {fileID: 1645626288, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1645626289, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 1645626289, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 6.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 1645626289, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 6.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 1645626292, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1645626292, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1843698019, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
-      propertyPath: meleeDamage
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1843698019, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
-      propertyPath: rangedDamage
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1843698019, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
-      propertyPath: meleeUpAttackAnim
-      value: 
-      objectReference: {fileID: 7400000, guid: 707ae11a218fcfb4cbe29e9dc3e294b8, type: 2}
-    - target: {fileID: 2094960492, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2094960493, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 2094960493, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 6.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 2094960493, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 6.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 2094960494, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2094960494, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 450739109934308824, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -38234,6 +38184,24 @@ MonoBehaviour:
   Enemy3Interval: 20
   Enemy4Interval: 20
   playerSafeRadius: 20
+--- !u!1 &821518952 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1645626288, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+  m_PrefabInstance: {fileID: 639579686}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &821518957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821518952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36d977aa1010fd447a21f4af17a18ee7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ignoreTag: Player
 --- !u!1 &827028454
 GameObject:
   m_ObjectHideFlags: 0

@@ -93,7 +93,17 @@ public class PlayerAnimator : MonoBehaviour
         {
             anim.SetBool("CurrentlyAttacking", true);
         }
-    
+
+        if(Input.GetButtonDown("Emote"))
+        {
+            anim.SetBool("Emoting", true);
+        }
+        else
+        {
+            anim.SetBool("Emoting", false);
+        }
+
+
     }
 
     private void SetColor(ParticleSystem ps)
