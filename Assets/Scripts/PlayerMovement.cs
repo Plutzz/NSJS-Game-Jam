@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float acceleration = 10f;        // Acceleration factor
     [SerializeField] public float deceleration = 10f;        // Deceleration factor
     [SerializeField] private Transform groundCheck;           // Transform of an object at the character's feet
+    [SerializeField] private Transform headCheck;           // Transform of an object at the character's head
     [SerializeField] private Vector2 groundCheckSize = new Vector2(0.5f, 0.1f); // Size of the ground check
     [SerializeField] private LayerMask groundLayer;           // Layer mask for the ground
 
@@ -41,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
     public bool JumpDown { get; private set; }
     public bool JumpUp { get; private set; }
     public bool IsGrounded { get; private set; }
+    public bool HitHead { get; private set; }
 
     private void Start()
     {
@@ -55,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Get input for movement
         GetInputs();
-        GroundCheck();
+        CollisionCheck();
         // Calculate horizontal movement
         CalculateWalk();
 
@@ -111,9 +113,10 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void GroundCheck()
+    private void CollisionCheck()
     {
         IsGrounded = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, groundLayer);
+        HitHead = Physics2D.OverlapBox(headCheck.position, groundCheckSize, 0f, groundLayer);
     }
 
     private void Move()
@@ -161,6 +164,11 @@ public class PlayerMovement : MonoBehaviour
             // _currentVerticalSpeed = 0;
             endedJumpEarly = true;
         }
+
+        if(HitHead)
+        {
+            if (currentVelocityY > 0) currentVelocityY = 0;
+        }
     }
 
     private void CalculateGravity()
@@ -187,6 +195,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(groundCheck.position, new Vector3(groundCheckSize.x, groundCheckSize.y, 0.1f));
+        Gizmos.DrawWireCube(headCheck.position, new Vector3(groundCheckSize.x, groundCheckSize.y, 0.1f));
     }
 
 }

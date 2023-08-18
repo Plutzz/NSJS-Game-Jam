@@ -179,6 +179,37 @@ Transform:
   m_Father: {fileID: 1311331858}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!1 &587092946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 587092947}
+  m_Layer: 0
+  m_Name: HeadCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &587092947
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587092946}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.42, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 450739109934308824}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &700859716
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,6 +1163,7 @@ Transform:
   - {fileID: 1370053480}
   - {fileID: 700859717}
   - {fileID: 5018182426250321953}
+  - {fileID: 587092947}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1167,6 +1199,7 @@ MonoBehaviour:
   meleeUp: {fileID: 1645626288}
   meleeDown: {fileID: 36675776}
   chefHat: {fileID: 3753242985719520372}
+  attackSFX: {fileID: 7085511547315718681, guid: e8ea615e77444fa4196418ae3e6ca4c1, type: 3}
   attackType: 0
   playerHoldingUp: 0
   playerHoldingDown: 0
@@ -1186,6 +1219,7 @@ MonoBehaviour:
   acceleration: 100
   deceleration: 100
   groundCheck: {fileID: 2120319380}
+  headCheck: {fileID: 587092947}
   groundCheckSize: {x: 0.725, y: 0.1}
   groundLayer:
     serializedVersion: 2
@@ -1289,8 +1323,9 @@ MonoBehaviour:
   fullHeart: {fileID: 21300000, guid: cab00350fe4ecdc4ca1da230d1899320, type: 3}
   emptyHeart: {fileID: 21300000, guid: 56cd950d1c6db5448bc64a95cbfe54e5, type: 3}
   WhackTheRipper: 0
-  secondsPerLifeDecay: 10
+  secondsPerLifeDecay: 2
   decayDamage: 1
+  maxHp: 6
   deathScreen: {fileID: 0}
   iFramesDuration: 2
   numberOfFlashes: 5
