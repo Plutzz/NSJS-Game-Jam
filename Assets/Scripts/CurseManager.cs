@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using Unity.Mathematics;
 using Random = UnityEngine.Random;
 using static UnityEditor.Progress;
+using System.Linq;
 
 public class CurseManager : MonoBehaviour
 {
@@ -57,7 +58,7 @@ public class CurseManager : MonoBehaviour
         {
             curseButtons.RemoveAt(0);
         }
-        else
+        else if(possibleCurses.Count == 0)
         {
             return; //Skips curse menu if all curses are taken
         }
@@ -84,7 +85,6 @@ public class CurseManager : MonoBehaviour
 
     public void RollCurses()
     {
-
         foreach(var curseButton in curseButtons)
         {
             int _index = Random.Range(0, tempPossibleCurses.Count);
@@ -113,7 +113,6 @@ public class CurseManager : MonoBehaviour
     [Header("Muffin Attack")]
 
     [Header("Roller Skates")]
-    [SerializeField] private float slideAmount;
     [SerializeField] private float playerMovementSpeedUp2;
 
 
@@ -140,6 +139,10 @@ public class CurseManager : MonoBehaviour
                 break;
             case 3:
                 // Whack the ripper: +lifesteal, -health over time
+                if (onWhackTheRipper != null)
+                {
+                    onWhackTheRipper();
+                }
                 break;
             case 4:
                 // Path of the wind god: +Movement Speed, +Attack Speed, -health, -attack damage
@@ -147,15 +150,24 @@ public class CurseManager : MonoBehaviour
                 break;
             case 5:
                 // Muffin Man: +Muffin Attack
+                if (onMuffinMan != null)
+                {
+                    onMuffinMan();
+                }
                 break;
             case 6:
                 // Roller Skates: +Movement Speed, slide instead of stopping
                 player.GetComponent<PlayerMovement>().maxSpeed += playerMovementSpeedUp2;
-                player.GetComponent<PlayerMovement>().deceleration -= slideAmount;
+                player.GetComponent<PlayerMovement>().deceleration = 1;
                 break;   
         }
         CloseMenu();
     }
+
+    public event Action onWhackTheRipper;
+    public event Action onMuffinMan;
+
+
 
 
 

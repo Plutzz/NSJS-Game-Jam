@@ -7,11 +7,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float attackTimer;
     [SerializeField] public float rangedDamage;
     [SerializeField] public float meleeDamage;
+    [SerializeField] public float muffinAttackRate;
+    [SerializeField] public float numberOfMuffins;
     [SerializeField] private AnimationClip projectileAttackAnim;
     [SerializeField] private AnimationClip meleeAttackAnim;
     [SerializeField] private AnimationClip meleeUpAttackAnim;
     [SerializeField] private GameObject projectile;
+    [SerializeField] private GameObject muffin;
     [SerializeField] private GameObject spawnPoint;
+    [SerializeField] private GameObject rotationPoint;
     [SerializeField] private GameObject melee;
     [SerializeField] private GameObject meleeUp;
 
@@ -30,6 +34,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         CanAttack = true;
+        CurseManager.instance.onMuffinMan += MuffinAttack;
     }
 
     private void Update()
@@ -71,6 +76,20 @@ public class PlayerController : MonoBehaviour
         StartAttackThisFrame = true;
     }
 
+    private void MuffinAttack()
+    {
+        for(int i = 0; i < numberOfMuffins; i++)
+        {
+            float angle = Random.Range(0f, 360f);
+
+            rotationPoint.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+
+            Instantiate(muffin, transform.position, rotationPoint.transform.rotation);
+        }
+        Invoke("MuffinAttack", 1/muffinAttackRate);
+    }
+
     IEnumerator RangedAttackActive(float waitTime)
     {
         CanAttack = false;
@@ -94,6 +113,8 @@ public class PlayerController : MonoBehaviour
         meleeUp.SetActive(false);
         yield return null;
     }
+
+    
 
 
 }

@@ -27,7 +27,6 @@ public class RangedAttackController : MonoBehaviour
              {
                 if (_other.gameObject.CompareTag(ignoreTag))
                 {
-                    Debug.Log("Ignored Damage");
                     return;
                 }
              }

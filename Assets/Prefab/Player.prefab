@@ -32,6 +32,37 @@ Transform:
   m_Father: {fileID: 1311331858}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!1 &700859716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 700859717}
+  m_Layer: 0
+  m_Name: RotationPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &700859717
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700859716}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 450739109934308824}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &737114278
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,6 +949,7 @@ Transform:
   - {fileID: 1311331858}
   - {fileID: 2120319380}
   - {fileID: 1370053480}
+  - {fileID: 700859717}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -936,11 +968,15 @@ MonoBehaviour:
   attackTimer: 1
   rangedDamage: 5
   meleeDamage: 10
+  muffinAttackRate: 0
+  numberOfMuffins: 0
   projectileAttackAnim: {fileID: 7400000, guid: 4d4ed237dfb578b42b701a04f668672e, type: 2}
   meleeAttackAnim: {fileID: 7400000, guid: 1d723a6924205324b89bb8a27ea4451a, type: 2}
   meleeUpAttackAnim: {fileID: 7400000, guid: 707ae11a218fcfb4cbe29e9dc3e294b8, type: 2}
   projectile: {fileID: 7175892937523809108, guid: 7f34f777cb888cf4c9ded6b2213e3946, type: 3}
+  muffin: {fileID: 2609082042369315890, guid: e5b17afe9fb669546bf4049d5523d38e, type: 3}
   spawnPoint: {fileID: 1615686324}
+  rotationPoint: {fileID: 700859716}
   melee: {fileID: 2094960492}
   meleeUp: {fileID: 1645626288}
   attackType: 0
@@ -1060,3 +1096,6 @@ MonoBehaviour:
   - {fileID: 0}
   fullHeart: {fileID: 21300000, guid: cab00350fe4ecdc4ca1da230d1899320, type: 3}
   emptyHeart: {fileID: 21300000, guid: 56cd950d1c6db5448bc64a95cbfe54e5, type: 3}
+  WhackTheRipper: 0
+  secondsPerLifeDecay: 10
+  decayDamage: 1

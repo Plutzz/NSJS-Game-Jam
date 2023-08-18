@@ -9,7 +9,14 @@ public class PlayerHealth : DamageableEntity
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
+    public bool WhackTheRipper;
+    public float secondsPerLifeDecay = 10f;
+    public float decayDamage = 1f;
 
+    private void Start()
+    {
+        CurseManager.instance.onWhackTheRipper += LifeDecay;
+    }
     void Update()
     {
         if (hp > numOfHearts)
@@ -37,11 +44,28 @@ public class PlayerHealth : DamageableEntity
                 hearts[i].gameObject.SetActive(false);
             }
         }
+
+
+
     }
 
     public override void Die()
     {
         Debug.Log("YOU DIED");
         // Game Over Screen
+    }
+
+    public void heal(float amount)
+    {
+        hp += amount;
+    }
+
+    private void LifeDecay()
+    {
+
+        this.TakeDamage(decayDamage);
+
+
+        Invoke("LifeDecay", secondsPerLifeDecay);
     }
 }
