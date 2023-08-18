@@ -18487,6 +18487,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1049041099, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+      propertyPath: secondsPerLifeDecay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1049041099, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
       propertyPath: hearts.Array.data[0]
       value: 
       objectReference: {fileID: 1709319667}
@@ -45371,7 +45375,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 265509110, guid: 90380c7c65badef4fa34d4e3f701a3ef, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 528382905046357371, guid: 90380c7c65badef4fa34d4e3f701a3ef, type: 3}
       propertyPath: m_Pivot.x
@@ -45511,7 +45515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6594271260551748285, guid: 90380c7c65badef4fa34d4e3f701a3ef, type: 3}
       propertyPath: timePerCurse
-      value: 5
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6594271261644799364, guid: 90380c7c65badef4fa34d4e3f701a3ef, type: 3}
       propertyPath: m_AnchorMax.x
