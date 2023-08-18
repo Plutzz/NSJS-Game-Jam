@@ -37,6 +37,25 @@ public class Enemy : DamageableEntity
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out DamageableEntity enemyHit))
+        {
+            if (ignoreTag != null)
+            {
+                if (collision.gameObject.CompareTag(ignoreTag))
+                {
+                    Debug.Log("Ignored Damage");
+                    return;
+                }
+            }
+
+            Debug.Log("Damage Player");
+
+            enemyHit.TakeDamage(damage);
+        }
+    }
+
 
     public virtual bool CheckPlayerIsInAttackRange()
     {

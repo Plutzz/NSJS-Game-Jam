@@ -15,6 +15,12 @@ public class PlayerHealth : DamageableEntity
     public float decayDamage = 1f;
     public GameObject deathScreen;
 
+
+    [Header("iFrames")]
+    [SerializeField] private float iFramesDuration;
+    [SerializeField] private int numberOfFlashes;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+
     private void Start()
     {
         CurseManager.instance.onWhackTheRipper += LifeDecay;
@@ -59,6 +65,8 @@ public class PlayerHealth : DamageableEntity
         {
             Die();
         }
+
+        StartCoroutine(Invunerability());
     }
     public override void Die()
     {
@@ -80,5 +88,18 @@ public class PlayerHealth : DamageableEntity
 
 
         Invoke("LifeDecay", secondsPerLifeDecay);
+    }
+
+    private IEnumerator Invunerability()
+    {
+        Physics2D.IgnoreLayerCollision(10, 11, true);
+        for(int i = 0; i < numberOfFlashes; i++)
+        {
+            spriteRenderer.color = new Color(1, 1, 1, 0.5f);
+            yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 2));
+            spriteRenderer.color = Color.white;
+            yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 2));
+        }
+        Physics2D.IgnoreLayerCollision(10, 11, false);
     }
 }

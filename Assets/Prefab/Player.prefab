@@ -496,7 +496,7 @@ MonoBehaviour:
   m_Intensity: 2.5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 0000000011d9b2bc9fcfe46e391a0f37b99368e8c7f322a4a7f6c2ee
+  m_ApplyToSortingLayers: 0000000011d9b2bc9fcfe46e391a0f37b99368e8c7f322a4a7f6c2eea16a70e8
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -927,7 +927,7 @@ GameObject:
   - component: {fileID: 584409316}
   - component: {fileID: 584409318}
   - component: {fileID: 1049041099}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1108,6 +1108,9 @@ MonoBehaviour:
   secondsPerLifeDecay: 10
   decayDamage: 1
   deathScreen: {fileID: 0}
+  iFramesDuration: 2
+  numberOfFlashes: 5
+  spriteRenderer: {fileID: 1020777006}
 --- !u!1 &3753242985719520372
 GameObject:
   m_ObjectHideFlags: 0
