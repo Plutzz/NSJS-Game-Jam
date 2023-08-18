@@ -6,6 +6,7 @@ using UnityEngine;
 public class DamageableEntity : MonoBehaviour
 {
     [SerializeField] public float hp;
+    [SerializeField] private AudioSource hitSFX;
 
     public virtual void TakeDamage(float damage)
     {
@@ -13,6 +14,7 @@ public class DamageableEntity : MonoBehaviour
 
         if (hp <= 0)
         {
+            Instantiate(hitSFX);
             Die();
         }
     }

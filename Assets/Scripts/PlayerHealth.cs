@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : DamageableEntity
 {
+    [SerializeField] private AudioSource playerHitSFX;
     public float numOfHearts;
     public Image[] hearts;
     public Sprite fullHeart;
@@ -21,7 +22,7 @@ public class PlayerHealth : DamageableEntity
     }
     void Update()
     {
-        if (hp > numOfHearts)
+        if (hp < numOfHearts || hp > numOfHearts)
         {
             numOfHearts = hp;
         }
@@ -50,7 +51,15 @@ public class PlayerHealth : DamageableEntity
 
 
     }
-
+    public override void TakeDamage(float damage)
+    {
+        hp -= damage;
+        Instantiate(playerHitSFX);
+        if (hp <= 0)
+        {
+            Die();
+        }
+    }
     public override void Die()
     {
         if (deathScreen != null) deathScreen.SetActive(true);

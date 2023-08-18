@@ -129,7 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26a99d4c89ebd1641ac97c4ad3de1fc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
+  hp: 3
+  hitSFX: {fileID: 5411853344275981381, guid: be4b1b2f7584ca545a42d97a06e39d2d, type: 3}
   movementScale: 1
   damage: 1
   attackRange: 0

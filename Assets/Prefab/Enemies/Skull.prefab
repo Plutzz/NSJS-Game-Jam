@@ -82,6 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 5
+  hitSFX: {fileID: 5411853344275981381, guid: be4b1b2f7584ca545a42d97a06e39d2d, type: 3}
   movementScale: 1
   damage: 1
   attackRange: 10
