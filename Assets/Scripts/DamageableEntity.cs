@@ -5,7 +5,7 @@ using UnityEngine;
 //Can be inherited by the player, enemies, or any object that will take damage and then be destroyed
 public class DamageableEntity : MonoBehaviour
 {
-    [SerializeField] private float hp;
+    [SerializeField] public float hp;
 
     public virtual void TakeDamage(float damage)
     {
