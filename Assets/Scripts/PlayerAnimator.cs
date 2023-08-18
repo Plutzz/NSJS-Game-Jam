@@ -102,7 +102,6 @@ public class PlayerAnimator : MonoBehaviour
         }
         else
         {
-            emoteSFX.Stop();
             anim.SetBool("Emoting", false);
         }
 

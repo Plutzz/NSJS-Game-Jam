@@ -18720,6 +18720,10 @@ PrefabInstance:
       propertyPath: muffinAttackRate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1843698019, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+      propertyPath: knockbackStrength
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2094960492, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -18772,6 +18776,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2820050448870467095, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c62ad057d265c4b47b23dd9a48c405a5, type: 3}
     - target: {fileID: 2820050448870467095, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
@@ -43386,7 +43394,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 990839315}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d45f1ea9890f6f14cbb6637f13bf20fc, type: 3}
