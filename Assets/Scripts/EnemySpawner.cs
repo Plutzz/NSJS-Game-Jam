@@ -35,6 +35,13 @@ public class EnemySpawner : MonoBehaviour
         StartCoroutine(spawnEnemy(Enemy2Interval, Enemy2));
         StartCoroutine(spawnEnemy(Enemy3Interval, Enemy3));
         StartCoroutine(spawnEnemy(Enemy4Interval, Enemy4));
+
+        SpawnEnemy(Enemy1);
+        SpawnEnemy(Enemy2);
+        SpawnEnemy(Enemy3);
+        SpawnEnemy(Enemy4);
+
+
     }
 
     // Update is called once per frame
@@ -46,13 +53,12 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator spawnEnemy(float interval, GameObject enemy)
     {
         yield return new WaitForSeconds(interval);
+
         Vector3 _spawnPoint = new Vector3(0, 0, 0) + transform.position;
         float _distanceFromPlayer = (PlayerController.playerController.gameObject.transform.position - _spawnPoint).magnitude;
-        
-        if(_distanceFromPlayer > playerSafeRadius)
+        if (_distanceFromPlayer > playerSafeRadius)
         {
-            GameObject newEnemy = Instantiate(enemy, _spawnPoint, Quaternion.identity);
-            numEnemies++;
+            SpawnEnemy(enemy);
         }
         StartCoroutine(spawnEnemy(interval, enemy));
     }
@@ -61,5 +67,13 @@ public class EnemySpawner : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, playerSafeRadius);
+    }
+
+    private void SpawnEnemy(GameObject enemy)
+    {
+        Vector3 _spawnPoint = new Vector3(0, 0, 0) + transform.position;
+        float _distanceFromPlayer = (PlayerController.playerController.gameObject.transform.position - _spawnPoint).magnitude;
+        GameObject newEnemy = Instantiate(enemy, _spawnPoint, Quaternion.identity);
+        numEnemies++;
     }
 }
