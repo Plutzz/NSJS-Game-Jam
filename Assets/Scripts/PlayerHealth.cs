@@ -12,10 +12,12 @@ public class PlayerHealth : DamageableEntity
     public bool WhackTheRipper;
     public float secondsPerLifeDecay = 10f;
     public float decayDamage = 1f;
+    public GameObject deathScreen;
 
     private void Start()
     {
         CurseManager.instance.onWhackTheRipper += LifeDecay;
+        deathScreen = LevelControl.instance.deathScreen;
     }
     void Update()
     {
@@ -51,8 +53,10 @@ public class PlayerHealth : DamageableEntity
 
     public override void Die()
     {
-        Debug.Log("YOU DIED");
-        // Game Over Screen
+        if (deathScreen != null) deathScreen.SetActive(true);
+        PauseMenu.Instance.Pause();
+        
+
     }
 
     public void heal(float amount)

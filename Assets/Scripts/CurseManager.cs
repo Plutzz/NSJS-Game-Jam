@@ -159,7 +159,7 @@ public class CurseManager : MonoBehaviour
                 // Roller Skates: +Movement Speed, slide instead of stopping
                 player.GetComponent<PlayerMovement>().maxSpeed += playerMovementSpeedUp2;
                 player.GetComponent<PlayerMovement>().deceleration = 1;
-                break;   
+                break;
         }
         CloseMenu();
     }

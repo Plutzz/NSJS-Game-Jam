@@ -6,9 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class LevelControl : MonoBehaviour
 {
+    public static LevelControl instance;
+    public GameObject deathScreen;
+   
+    private void Awake()
+    {
+        instance = this;
+    }
+
     public void ReturnToTitle()
     {
-        Debug.Log("Returning to the menu");
+       
         SceneManager.LoadScene("Main Menu");
     }
 }
