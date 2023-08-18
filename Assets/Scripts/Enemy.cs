@@ -7,7 +7,7 @@ public class Enemy : DamageableEntity
 {
     [SerializeField] public float movementSpeed;
     [SerializeField] public float damage;
-    [SerializeField] public float chaseRange;
+    [SerializeField] public float attackRange;
     public GameObject player;
 
     private float distance;
@@ -31,7 +31,7 @@ public class Enemy : DamageableEntity
     {
         float distance = (player.transform.position - transform.position).magnitude;
 
-        if (distance > chaseRange) return false;
+        if (distance > attackRange) return false;
 
         return true;
 
