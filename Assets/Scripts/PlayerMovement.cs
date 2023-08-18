@@ -51,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if(rb == null) return;
 
+        if (PauseMenu.getGameIsPaused()) return;
+
         // Get input for movement
         GetInputs();
         GroundCheck();

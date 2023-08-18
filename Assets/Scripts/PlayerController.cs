@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (PauseMenu.getGameIsPaused()) return;
 
         playerHoldingUp = Input.GetAxisRaw("Vertical") > 0.4;
 
