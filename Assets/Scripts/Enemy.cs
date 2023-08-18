@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Enemy : DamageableEntity
 {
-    [SerializeField] public float movementSpeed;
+    [SerializeField] public float movementScale;
     [SerializeField] public float damage;
     [SerializeField] public float attackRange;
     [SerializeField] public string ignoreTag;
@@ -37,13 +37,6 @@ public class Enemy : DamageableEntity
         }
     }
 
-
-    public virtual void GhostChase()
-    {
-        distance = Vector2.Distance(transform.position, player.transform.position);
-        Vector2 direction = player.transform.position - transform.position;
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, movementSpeed * Time.deltaTime);
-    }
 
     public virtual bool CheckPlayerIsInAttackRange()
     {
