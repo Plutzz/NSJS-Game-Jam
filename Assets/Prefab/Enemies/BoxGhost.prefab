@@ -74,7 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 3
   movementScale: 1
-  damage: 0
+  damage: 1
   attackRange: 0
   ignoreTag: Enemy
   player: {fileID: 0}

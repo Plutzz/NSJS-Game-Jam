@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float attackTimer;
+    [SerializeField] public float rangedDamage;
+    [SerializeField] public float meleeDamage;
     [SerializeField] private AnimationClip projectileAttackAnim;
     [SerializeField] private AnimationClip meleeAttackAnim;
     [SerializeField] private AnimationClip meleeUpAttackAnim;
