@@ -260,6 +260,7 @@ Transform:
   m_Children:
   - {fileID: 1615686325}
   - {fileID: 737114279}
+  - {fileID: 377622913813009608}
   m_Father: {fileID: 450739109934308824}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -599,7 +600,7 @@ GameObject:
   - component: {fileID: 1645626291}
   - component: {fileID: 1645626290}
   - component: {fileID: 821518957}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: fate_hitwave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -746,7 +747,7 @@ GameObject:
   - component: {fileID: 2094960495}
   - component: {fileID: 2094960496}
   - component: {fileID: 335474948}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: fate_hitwave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -969,10 +970,11 @@ MonoBehaviour:
   attackTimer: 1
   rangedDamage: 5
   meleeDamage: 1
-  muffinAttackRate: 0
-  numberOfMuffins: 0
-  knockbackStrength: 30
+  muffinAttackRate: 1
+  numberOfMuffins: 3
+  knockbackStrength: 15
   knockbackDelay: 0.3
+  playerLight: {fileID: 0}
   projectileAttackAnim: {fileID: 7400000, guid: 4d4ed237dfb578b42b701a04f668672e, type: 2}
   meleeAttackAnim: {fileID: 7400000, guid: 1d723a6924205324b89bb8a27ea4451a, type: 2}
   meleeUpAttackAnim: {fileID: 7400000, guid: 707ae11a218fcfb4cbe29e9dc3e294b8, type: 2}
@@ -1029,7 +1031,7 @@ MonoBehaviour:
   launchParticles: {fileID: 0}
   moveParticles: {fileID: 0}
   landParticles: {fileID: 0}
-  emoteSFX: {fileID: 0}
+  emoteSFX: {fileID: 2820050448870467095}
 --- !u!50 &584409316
 Rigidbody2D:
   serializedVersion: 4
@@ -1090,6 +1092,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 6
+  hitSFX: {fileID: 0}
+  playerHitSFX: {fileID: 814869823866601171, guid: 0002db69b8c2bb34c8a1c3643e3f1a20, type: 3}
   numOfHearts: 6
   hearts:
   - {fileID: 0}
@@ -1104,6 +1108,90 @@ MonoBehaviour:
   secondsPerLifeDecay: 10
   decayDamage: 1
   deathScreen: {fileID: 0}
+--- !u!1 &3753242985719520372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 377622913813009608}
+  - component: {fileID: 1249755620238365246}
+  m_Layer: 0
+  m_Name: Chef Hat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &377622913813009608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3753242985719520372}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.197, y: 0.437, z: 0}
+  m_LocalScale: {x: 0.67, y: 0.67, z: 0.67}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1020777003}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1249755620238365246
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3753242985719520372}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -395285855
+  m_SortingLayer: 7
+  m_SortingOrder: 4
+  m_Sprite: {fileID: 21300000, guid: 45a505a90e835c444b6626742320e9cf, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 0.8}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &4619081354919305311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,7 +1234,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 3c0a8fe1e0699634f959a044a191b2b9, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 95bb36f915c0fc34bba9a95b04964d86, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c62ad057d265c4b47b23dd9a48c405a5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
