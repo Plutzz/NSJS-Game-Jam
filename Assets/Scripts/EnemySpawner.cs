@@ -38,8 +38,6 @@ public class EnemySpawner : MonoBehaviour
 
         SpawnEnemy(Enemy1);
         SpawnEnemy(Enemy2);
-        SpawnEnemy(Enemy3);
-        SpawnEnemy(Enemy4);
 
 
     }

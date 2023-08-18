@@ -10,11 +10,11 @@ public class DamageableEntity : MonoBehaviour
 
     public virtual void TakeDamage(float damage)
     {
-        Instantiate(hitSFX);
         hp -= damage;
 
         if (hp <= 0)
         {
+            Instantiate(hitSFX);
             Die();
         }
     }
