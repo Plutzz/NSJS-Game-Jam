@@ -132,7 +132,7 @@ public class CurseManager : MonoBehaviour
         {
             case 1:
                 // Cardboard box: -enemy attack range, -player movement speed
-
+                player.GetComponent<PlayerMovement>().maxSpeed += playerMovementSpeedDown;
                 break;
             case 2:
                 // Salt Shaker: gain ranged attack, lose melee attack, -dmg

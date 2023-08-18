@@ -56,4 +56,10 @@ public class EnemySpawner : MonoBehaviour
         }
         StartCoroutine(spawnEnemy(interval, enemy));
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, playerSafeRadius);
+    }
 }
