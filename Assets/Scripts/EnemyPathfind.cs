@@ -69,11 +69,11 @@ public class EnemyPathfind : MonoBehaviour
 
         if(force.x >= 0.01f)
         {
-            enemyGraphics.transform.localScale = new Vector3(-1, 1, 1);
+            enemyGraphics.transform.localScale = new Vector3(1, 1, 1);
         }
         else if(force.x <= -0.01f)
         {
-            enemyGraphics.transform.localScale = new Vector3(1, 1, 1);
+            enemyGraphics.transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 

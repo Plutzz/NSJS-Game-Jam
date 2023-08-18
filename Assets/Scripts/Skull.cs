@@ -7,6 +7,7 @@ public class Skull : Enemy
     [SerializeField] private float attackSpeed;
     [SerializeField] private GameObject bullet;
     [SerializeField] private Animator animator;
+    [SerializeField] private GameObject bulletSpawnPoint;
     public override void Start()
     {
         player = PlayerController.playerController.gameObject;
@@ -18,7 +19,7 @@ public class Skull : Enemy
 
         if (CheckPlayerIsInAttackRange())
         {
-            Instantiate(bullet);
+            Instantiate(bullet, bulletSpawnPoint.transform.position, bulletSpawnPoint.transform.rotation);
             animator.SetBool("Attacking", true);
         }
 
