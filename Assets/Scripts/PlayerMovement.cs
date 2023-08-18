@@ -4,9 +4,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("WALKING")]
-    [SerializeField] private float maxSpeed = 5f;            // Base movement speed
+    [SerializeField] public float maxSpeed = 5f;            // Base movement speed
     [SerializeField] private float acceleration = 10f;        // Acceleration factor
-    [SerializeField] private float deceleration = 10f;        // Deceleration factor
+    [SerializeField] public float deceleration = 10f;        // Deceleration factor
     [SerializeField] private Transform groundCheck;           // Transform of an object at the character's feet
     [SerializeField] private Vector2 groundCheckSize = new Vector2(0.5f, 0.1f); // Size of the ground check
     [SerializeField] private LayerMask groundLayer;           // Layer mask for the ground

@@ -18,6 +18,7 @@ public class CurseManager : MonoBehaviour
     private List<Curse> tempPossibleCurses = new List<Curse>();
     private GameObject[] childs;
     private int numButtons;
+    private GameObject player;
 
     private void Awake()
     {
@@ -44,6 +45,7 @@ public class CurseManager : MonoBehaviour
     private void Start()
     {
         Timer.timer.onCurseTime += OpenMenu;
+        player = PlayerController.playerController.gameObject;
     }
     public void OpenMenu()
     {
@@ -130,21 +132,26 @@ public class CurseManager : MonoBehaviour
         {
             case 1:
                 // Cardboard box: -enemy attack range, -player movement speed
+
                 break;
             case 2:
                 // Salt Shaker: gain ranged attack, lose melee attack, -dmg
+                player.GetComponent<PlayerController>().attackType = 1;
                 break;
             case 3:
                 // Whack the ripper: +lifesteal, -health over time
                 break;
             case 4:
                 // Path of the wind god: +Movement Speed, +Attack Speed, -health, -attack damage
+                player.GetComponent<PlayerMovement>().maxSpeed += playerMovementSpeedUp1;
                 break;
             case 5:
                 // Muffin Man: +Muffin Attack
                 break;
             case 6:
                 // Roller Skates: +Movement Speed, slide instead of stopping
+                player.GetComponent<PlayerMovement>().maxSpeed += playerMovementSpeedUp2;
+                player.GetComponent<PlayerMovement>().deceleration -= slideAmount;
                 break;   
         }
         CloseMenu();
