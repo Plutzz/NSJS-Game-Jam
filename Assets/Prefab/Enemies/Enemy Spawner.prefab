@@ -48,8 +48,8 @@ MonoBehaviour:
   Enemy2: {fileID: 4695812399787036565, guid: a83385f4f9e2c8348b76a8abca979ab1, type: 3}
   Enemy3: {fileID: 4870729716130872186, guid: b5b2a02029ddfce48ab52940d2cf4be8, type: 3}
   Enemy4: {fileID: 3350327491834029904, guid: c2a960a10442c9546985b24365f3c88e, type: 3}
-  Enemy1Interval: 20
-  Enemy2Interval: 20
-  Enemy3Interval: 20
-  Enemy4Interval: 20
+  Enemy1Interval: 40
+  Enemy2Interval: 40
+  Enemy3Interval: 40
+  Enemy4Interval: 40
   playerSafeRadius: 5

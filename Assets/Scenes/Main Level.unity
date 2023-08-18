@@ -79531,14 +79531,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 767671659}
     m_Modifications:
-    - target: {fileID: 1541026866, guid: 6e720a70f6b1255478d1ab9eccb8d348, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1541026866, guid: 6e720a70f6b1255478d1ab9eccb8d348, type: 3}
-      propertyPath: playerSafeRadius
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 1455758899605121676, guid: 6e720a70f6b1255478d1ab9eccb8d348, type: 3}
       propertyPath: m_Name
       value: Enemy Spawner
