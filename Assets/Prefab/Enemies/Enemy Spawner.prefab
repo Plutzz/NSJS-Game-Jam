@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1455758899605121682}
+  - component: {fileID: 1541026866}
   m_Layer: 0
   m_Name: Enemy Spawner
   m_TagString: Untagged
@@ -31,3 +32,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1541026866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455758899605121676}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9013b7bfc668504e9a549590744450a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy1: {fileID: 1651767155577364508, guid: 4615316b09481f24b953bdd6fc134127, type: 3}
+  Enemy2: {fileID: 4695812399787036565, guid: a83385f4f9e2c8348b76a8abca979ab1, type: 3}
+  Enemy3: {fileID: 4870729716130872186, guid: b5b2a02029ddfce48ab52940d2cf4be8, type: 3}
+  Enemy4: {fileID: 3350327491834029904, guid: c2a960a10442c9546985b24365f3c88e, type: 3}
+  Enemy1Interval: 20
+  Enemy2Interval: 20
+  Enemy3Interval: 20
+  Enemy4Interval: 20
+  playerSafeRadius: 20
