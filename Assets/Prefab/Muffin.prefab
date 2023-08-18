@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2609082042081378955}
   - component: {fileID: 2609082042081378964}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: fate_muffins_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 2609082042369315902}
   - component: {fileID: 2609082042369315901}
   - component: {fileID: 1874050368675518801}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Muffin
   m_TagString: Untagged
   m_Icon: {fileID: 0}

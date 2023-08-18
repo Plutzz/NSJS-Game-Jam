@@ -18544,6 +18544,10 @@ PrefabInstance:
       propertyPath: hearts.Array.data[5]
       value: 
       objectReference: {fileID: 1484853790}
+    - target: {fileID: 1645626288, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1843698019, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
       propertyPath: numberOfMuffins
       value: 3
@@ -18551,6 +18555,10 @@ PrefabInstance:
     - target: {fileID: 1843698019, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
       propertyPath: muffinAttackRate
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094960492, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 450739109934308824, guid: 08782889b3933204cb39d2d8150883a6, type: 3}
       propertyPath: m_RootOrder

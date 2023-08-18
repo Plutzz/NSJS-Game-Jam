@@ -35,5 +35,13 @@ public class RangedAttackController : MonoBehaviour
 
             enemyHit.TakeDamage(damage);
         }
+
+        if(_other.gameObject.layer == 6 || _other.gameObject.layer == 9) // ground layer
+        {
+            Destroy(gameObject);
+        }
     }
+
+
+
 }
