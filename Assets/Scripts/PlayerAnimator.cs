@@ -85,6 +85,14 @@ public class PlayerAnimator : MonoBehaviour
         {
             anim.SetBool("HoldingUp", false);
         }
+        if(playerController.playerHoldingDown)
+        {
+            anim.SetBool("HoldingDown", true);
+        }
+        else
+        {
+            anim.SetBool("HoldingDown", false);
+        }
 
         if(playerController.CanAttack)
         {
