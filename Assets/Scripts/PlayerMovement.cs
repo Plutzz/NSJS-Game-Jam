@@ -134,6 +134,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void CalculateJump()
     {
+        if(JumpDown)
+        {
+            lastJumpPressed = Time.time;
+        }
+
         // Jump if: grounded or within coyote threshold || sufficient jump buffer
         if (JumpDown && IsGrounded || HasBufferedJump)
         {
