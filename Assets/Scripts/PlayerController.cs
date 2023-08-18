@@ -42,7 +42,6 @@ public class PlayerController : MonoBehaviour
     {
         if(attackType == 0)
         {
-            Debug.Log("Melee attack");
             melee.SetActive(true);
             StartCoroutine(MeleeAttackActive(meleeAttackAnim.length));
         }

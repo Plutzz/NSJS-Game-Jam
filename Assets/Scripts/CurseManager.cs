@@ -37,11 +37,6 @@ public class CurseManager : MonoBehaviour
             }
         }
 
-        foreach (var item in tempPossibleCurses)
-        {
-            Debug.Log(item);
-        }
-
 
 
     }
