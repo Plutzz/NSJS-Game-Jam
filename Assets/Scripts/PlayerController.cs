@@ -16,12 +16,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AnimationClip projectileAttackAnim;
     [SerializeField] private AnimationClip meleeAttackAnim;
     [SerializeField] private AnimationClip meleeUpAttackAnim;
+    [SerializeField] private AnimationClip meleeDownAttackAnim;
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject muffin;
     [SerializeField] private GameObject spawnPoint;
     [SerializeField] private GameObject rotationPoint;
     [SerializeField] private GameObject melee;
     [SerializeField] private GameObject meleeUp;
+    [SerializeField] private GameObject meleeDown;
 
     public int attackType;
     public bool StartAttackThisFrame { get; private set; }
@@ -30,6 +32,9 @@ public class PlayerController : MonoBehaviour
     public static PlayerController playerController;
 
     public bool playerHoldingUp;
+    public bool playerHoldingDown;
+
+    private float yAxis;
 
     private void Awake()
     {
@@ -43,8 +48,13 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (PauseMenu.getGameIsPaused()) return;
 
-        playerHoldingUp = Input.GetAxisRaw("Vertical") > 0.4;
+        yAxis = Input.GetAxisRaw("Vertical");
+
+        playerHoldingUp = yAxis > 0.4f;
+
+        playerHoldingDown = yAxis < -0.4f;
 
         if (CanAttack && Input.GetButtonDown("Attack1"))
         {
@@ -60,10 +70,15 @@ public class PlayerController : MonoBehaviour
     {
         if(attackType == 0)
         {
-            if(!playerHoldingUp)
+            if(!playerHoldingUp && !playerHoldingDown)
             {
                 melee.SetActive(true);
                 StartCoroutine(MeleeAttackActive(meleeAttackAnim.length));
+            }
+            else if(playerHoldingDown)
+            {
+                meleeDown.SetActive(true);
+                StartCoroutine(MeleeDownAttackActive(meleeDownAttackAnim.length));
             }
             else
             {
@@ -118,7 +133,16 @@ public class PlayerController : MonoBehaviour
         yield return null;
     }
 
-    
+    IEnumerator MeleeDownAttackActive(float waitTime)
+    {
+        CanAttack = false;
+        yield return new WaitForSeconds(waitTime);
+        CanAttack = true;
+        meleeDown.SetActive(false);
+        yield return null;
+    }
+
+
 
 
 }
