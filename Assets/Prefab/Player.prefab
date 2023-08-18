@@ -547,7 +547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615686324}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.88, y: 0, z: 0}
+  m_LocalPosition: {x: 1.42, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -583,7 +583,7 @@ Transform:
   m_GameObject: {fileID: 1645626288}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 6.29, y: 6.29, z: 6.29}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 737114279}
@@ -630,7 +630,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 333715334, guid: 03be878dac70f81418a7e1459ffa9de8, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -638,7 +638,7 @@ SpriteRenderer:
   m_Size: {x: 0.5, y: 1.0625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &1645626291
@@ -716,7 +716,7 @@ Transform:
   m_GameObject: {fileID: 2094960492}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 6.22, y: 6.22, z: 6.22}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1615686325}
@@ -763,7 +763,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: df68f44e77c9f2145ab04d425ac1299a, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -908,11 +908,13 @@ MonoBehaviour:
   attackTimer: 1
   projectileAttackAnim: {fileID: 7400000, guid: 4d4ed237dfb578b42b701a04f668672e, type: 2}
   meleeAttackAnim: {fileID: 7400000, guid: 1d723a6924205324b89bb8a27ea4451a, type: 2}
+  meleeUpAttackAnim: {fileID: 7400000, guid: 707ae11a218fcfb4cbe29e9dc3e294b8, type: 2}
   projectile: {fileID: 7175892937523809108, guid: 7f34f777cb888cf4c9ded6b2213e3946, type: 3}
   spawnPoint: {fileID: 1615686324}
   melee: {fileID: 2094960492}
   meleeUp: {fileID: 1645626288}
   attackType: 0
+  playerHoldingUp: 0
 --- !u!114 &584409317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -936,7 +938,7 @@ MonoBehaviour:
   jumpHeight: 20
   jumpApexThreshold: 10
   coyoteTimeThreshold: 0.1
-  jumpBuffer: 0.1
+  jumpBuffer: 0.2
   jumpEndEarlyGravityModifier: 10
   minFallSpeed: 40
   maxFallSpeed: 80
@@ -1018,3 +1020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 10
+  numOfHearts: 0
+  hearts: []
+  fullHeart: {fileID: 0}
+  emptyHeart: {fileID: 0}
