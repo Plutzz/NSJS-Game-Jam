@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 814869823866601170}
   - component: {fileID: 814869823866601171}
+  - component: {fileID: -5309281718491974002}
   m_Layer: 0
   m_Name: playerHitSFX
   m_TagString: Untagged
@@ -44,7 +45,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 3c0a8fe1e0699634f959a044a191b2b9, type: 2}
   m_audioClip: {fileID: 8300000, guid: bd3511683c59c4f47891ef8593a48870, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -128,3 +129,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-5309281718491974002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814869823866601168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df6584d46677c9643a8244b525ef64c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 2

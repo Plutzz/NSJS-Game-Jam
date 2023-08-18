@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject meleeUp;
     [SerializeField] private GameObject meleeDown;
     [SerializeField] private GameObject chefHat;
+    [SerializeField] private GameObject attackSFX;
 
     public int attackType;
     public bool StartAttackThisFrame { get; private set; }
@@ -69,6 +70,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Attack()
     {
+        Instantiate(attackSFX);
         if(attackType == 0)
         {
             if(!playerHoldingUp && !playerHoldingDown)
