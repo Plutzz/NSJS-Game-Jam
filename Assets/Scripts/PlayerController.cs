@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float numberOfMuffins;
     [SerializeField] public float knockbackStrength;
     [SerializeField] public float knockbackDelay;
+    [SerializeField] public Light2D playerLight;
     [SerializeField] private AnimationClip projectileAttackAnim;
     [SerializeField] private AnimationClip meleeAttackAnim;
     [SerializeField] private AnimationClip meleeUpAttackAnim;

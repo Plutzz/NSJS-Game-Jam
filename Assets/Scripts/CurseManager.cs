@@ -114,6 +114,13 @@ public class CurseManager : MonoBehaviour
     [Header("Roller Skates")]
     [SerializeField] private float playerMovementSpeedUp2;
 
+    [Header("Cat Eyes")]
+    [SerializeField] private float playerVisibilityMulti1 = 1.2f;
+
+    [Header("Jackalope")]
+    [SerializeField] private float playerVisibilityMulti2 = 0.8f;
+    [SerializeField] private float jumpHeightMulti = 1.2f;
+
 
     public void TakeCurse(int _id)
     {
@@ -160,10 +167,13 @@ public class CurseManager : MonoBehaviour
                 player.GetComponent<PlayerMovement>().deceleration = 1;
                 break;
             case 7:
-                // Cat Eyes: + visibility, + enemy Att range
+                // Cat Eyes: +visibility, +enemy Att range
+                player.GetComponent<PlayerController>().playerLight.pointLightOuterRadius *= playerVisibilityMulti1; 
                 break;
             case 8:
-                // Jackalope: + jump height, - vision
+                // Jackalope: +jump height, -vision
+                player.GetComponent<PlayerController>().playerLight.pointLightOuterRadius *= playerVisibilityMulti2;
+                player.GetComponent<PlayerMovement>().jumpHeight *= jumpHeightMulti;
                 break;
 
         }

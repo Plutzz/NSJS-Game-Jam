@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Vector2 groundCheckSize = new Vector2(0.5f, 0.1f); // Size of the ground check
     [SerializeField] private LayerMask groundLayer;           // Layer mask for the ground
 
-    [Header("JUMPING")][SerializeField] private float jumpHeight = 30;
+    [Header("JUMPING")][SerializeField] public float jumpHeight = 30;
     [SerializeField] private float jumpApexThreshold = 10f;
     [SerializeField] private float coyoteTimeThreshold = 0.1f;
     [SerializeField] private float jumpBuffer = 0.1f;
