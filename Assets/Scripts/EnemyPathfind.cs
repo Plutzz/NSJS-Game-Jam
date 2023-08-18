@@ -13,10 +13,9 @@ public class EnemyPathfind : MonoBehaviour
 
     private AIPath aiPath;
     private Transform target;
-    private AIDestinationSetter destinationSetter;
     private Path path;
     private int currentWaypoint = 0;
-    private bool reachedEndOfPath = false;
+    //private bool reachedEndOfPath = false;
     private Seeker seeker;
     private Rigidbody2D rb;
     private GameObject player;
@@ -48,12 +47,12 @@ public class EnemyPathfind : MonoBehaviour
 
         if(currentWaypoint >= path.vectorPath.Count)
         {
-            reachedEndOfPath = true;
+            //reachedEndOfPath = true;
             return;
         }
         else
         {
-            reachedEndOfPath = false;
+            //reachedEndOfPath = false;
         }
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
