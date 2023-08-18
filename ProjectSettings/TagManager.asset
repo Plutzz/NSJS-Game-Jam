@@ -60,6 +60,9 @@ TagManager:
   - name: Walls
     uniqueID: 4005754535
     locked: 0
+  - name: Box Ghost
+    uniqueID: 3899681441
+    locked: 0
   - name: Foreground
     uniqueID: 2388912763
     locked: 0

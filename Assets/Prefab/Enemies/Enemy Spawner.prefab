@@ -39,7 +39,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455758899605121676}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9013b7bfc668504e9a549590744450a, type: 3}
   m_Name: 
@@ -52,4 +52,4 @@ MonoBehaviour:
   Enemy2Interval: 20
   Enemy3Interval: 20
   Enemy4Interval: 20
-  playerSafeRadius: 20
+  playerSafeRadius: 5
