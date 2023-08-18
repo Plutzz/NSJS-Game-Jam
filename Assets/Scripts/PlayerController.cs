@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float meleeDamage;
     [SerializeField] public float muffinAttackRate;
     [SerializeField] public float numberOfMuffins;
+    [SerializeField] public float knockbackStrength;
+    [SerializeField] public float knockbackDelay;
     [SerializeField] private AnimationClip projectileAttackAnim;
     [SerializeField] private AnimationClip meleeAttackAnim;
     [SerializeField] private AnimationClip meleeUpAttackAnim;

@@ -6,7 +6,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using Unity.Mathematics;
 using Random = UnityEngine.Random;
-using static UnityEditor.Progress;
 using System.Linq;
 
 public class CurseManager : MonoBehaviour

@@ -1,4 +1,4 @@
-using System.Linq;
+/*using System.Linq;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
@@ -83,3 +83,4 @@ public class ShadowCaster2DTileMapEditor : Editor
 	}
 
 }
+*/

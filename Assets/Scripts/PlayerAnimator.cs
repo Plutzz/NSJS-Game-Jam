@@ -8,6 +8,7 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private ParticleSystem jumpParticles, launchParticles;
     [SerializeField] private ParticleSystem moveParticles, landParticles;
+    [SerializeField] private AudioSource emoteSFX;
 
     private Rigidbody2D rb;
     private float xVelocity;
@@ -96,10 +97,12 @@ public class PlayerAnimator : MonoBehaviour
 
         if(Input.GetButtonDown("Emote"))
         {
+            emoteSFX.Play();
             anim.SetBool("Emoting", true);
         }
         else
         {
+            emoteSFX.Stop();
             anim.SetBool("Emoting", false);
         }
 

@@ -22,9 +22,9 @@ public class MeleeAttackController : MonoBehaviour
                 }
             }
 
+            Debug.Log("Enemy Hit");
 
-
-            enemyHit.TakeDamage(PlayerController.playerController.meleeDamage);
+            enemyHit.TakeDamageAndKnockback(PlayerController.playerController.meleeDamage, PlayerController.playerController.knockbackStrength, PlayerController.playerController.knockbackDelay, transform );
         }
     }
 }
