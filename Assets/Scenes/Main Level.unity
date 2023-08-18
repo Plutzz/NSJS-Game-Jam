@@ -41100,42 +41100,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &863266013
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 863266014}
-  m_Layer: 5
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &863266014
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863266013}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1055637050}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &873240051
 GameObject:
   m_ObjectHideFlags: 0
@@ -43492,30 +43456,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 528382905391548212, guid: 90380c7c65badef4fa34d4e3f701a3ef, type: 3}
-      propertyPath: slideAmount
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 528382905391548212, guid: 90380c7c65badef4fa34d4e3f701a3ef, type: 3}
-      propertyPath: enemyAttackRangeDown
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 528382905391548212, guid: 90380c7c65badef4fa34d4e3f701a3ef, type: 3}
-      propertyPath: playerMovementSpeedUp1
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 528382905391548212, guid: 90380c7c65badef4fa34d4e3f701a3ef, type: 3}
-      propertyPath: playerMovementSpeedUp2
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 528382905391548212, guid: 90380c7c65badef4fa34d4e3f701a3ef, type: 3}
-      propertyPath: playerMovementSpeedDown
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 528382905391548212, guid: 90380c7c65badef4fa34d4e3f701a3ef, type: 3}
-      propertyPath: playerMovementSpeedDebuff
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 873728393188723803, guid: 90380c7c65badef4fa34d4e3f701a3ef, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -43563,14 +43503,6 @@ PrefabInstance:
     - target: {fileID: 6163596063779537503, guid: 90380c7c65badef4fa34d4e3f701a3ef, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6594271260551748285, guid: 90380c7c65badef4fa34d4e3f701a3ef, type: 3}
-      propertyPath: TimerOn
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6594271260551748285, guid: 90380c7c65badef4fa34d4e3f701a3ef, type: 3}
-      propertyPath: timePerCurse
-      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6763019487011744598, guid: 90380c7c65badef4fa34d4e3f701a3ef, type: 3}
       propertyPath: m_AnchorMax.y
@@ -43598,11 +43530,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90380c7c65badef4fa34d4e3f701a3ef, type: 3}
---- !u!224 &1055637050 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 528382905046357371, guid: 90380c7c65badef4fa34d4e3f701a3ef, type: 3}
-  m_PrefabInstance: {fileID: 1055637049}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1061828563 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1117813380356796237, guid: 90380c7c65badef4fa34d4e3f701a3ef, type: 3}
