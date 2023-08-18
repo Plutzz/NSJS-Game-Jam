@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject melee;
     [SerializeField] private GameObject meleeUp;
     [SerializeField] private GameObject meleeDown;
+    [SerializeField] private GameObject chefHat;
 
     public int attackType;
     public bool StartAttackThisFrame { get; private set; }
@@ -97,6 +98,8 @@ public class PlayerController : MonoBehaviour
 
     private void MuffinAttack()
     {
+        chefHat.SetActive(true);
+
         for(int i = 0; i < numberOfMuffins; i++)
         {
             float angle = Random.Range(0f, 360f);

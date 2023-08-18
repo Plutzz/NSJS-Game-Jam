@@ -13,18 +13,24 @@ public class PlayerHealth : DamageableEntity
     public bool WhackTheRipper;
     public float secondsPerLifeDecay = 10f;
     public float decayDamage = 1f;
+    public float maxHp = 6f;
     public GameObject deathScreen;
-
+    public static PlayerHealth instance;
 
     [Header("iFrames")]
     [SerializeField] private float iFramesDuration;
     [SerializeField] private int numberOfFlashes;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
+    private void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
         CurseManager.instance.onWhackTheRipper += LifeDecay;
         deathScreen = LevelControl.instance.deathScreen;
+        Physics2D.IgnoreLayerCollision(10, 11, false);
     }
     void Update()
     {
@@ -79,6 +85,10 @@ public class PlayerHealth : DamageableEntity
     public void heal(float amount)
     {
         hp += amount;
+        if(hp > maxHp)
+        {
+            hp = maxHp;
+        }
     }
 
     private void LifeDecay()

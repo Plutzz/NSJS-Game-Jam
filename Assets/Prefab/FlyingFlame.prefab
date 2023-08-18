@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8498666819851601543}
   - component: {fileID: 8498666819851601537}
   - component: {fileID: 8498666819851601542}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: FlyingFlame
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 8498666820365592667}
   - component: {fileID: 8498666820365592665}
   - component: {fileID: 8498666820365592670}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}

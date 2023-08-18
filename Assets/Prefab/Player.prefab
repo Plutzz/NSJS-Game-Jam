@@ -786,7 +786,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1645626289
 Transform:
   m_ObjectHideFlags: 0
@@ -1149,16 +1149,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackTimer: 1
   rangedDamage: 5
-  meleeDamage: 1
+  meleeDamage: 2
   muffinAttackRate: 1
   numberOfMuffins: 3
   knockbackStrength: 10
   knockbackDelay: 0.3
-  playerLight: {fileID: 0}
+  playerLight: {fileID: 1370053481}
   projectileAttackAnim: {fileID: 7400000, guid: 4d4ed237dfb578b42b701a04f668672e, type: 2}
   meleeAttackAnim: {fileID: 7400000, guid: 1d723a6924205324b89bb8a27ea4451a, type: 2}
   meleeUpAttackAnim: {fileID: 7400000, guid: 707ae11a218fcfb4cbe29e9dc3e294b8, type: 2}
-  meleeDownAttackAnim: {fileID: 0}
+  meleeDownAttackAnim: {fileID: 7400000, guid: 707ae11a218fcfb4cbe29e9dc3e294b8, type: 2}
   projectile: {fileID: 7175892937523809108, guid: 7f34f777cb888cf4c9ded6b2213e3946, type: 3}
   muffin: {fileID: 2609082042369315890, guid: e5b17afe9fb669546bf4049d5523d38e, type: 3}
   spawnPoint: {fileID: 1615686324}
@@ -1166,6 +1166,7 @@ MonoBehaviour:
   melee: {fileID: 2094960492}
   meleeUp: {fileID: 1645626288}
   meleeDown: {fileID: 36675776}
+  chefHat: {fileID: 3753242985719520372}
   attackType: 0
   playerHoldingUp: 0
   playerHoldingDown: 0
@@ -1346,7 +1347,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1364,8 +1365,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -395285855
-  m_SortingLayer: 7
+  m_SortingLayerID: -1541213241
+  m_SortingLayer: 5
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 45a505a90e835c444b6626742320e9cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

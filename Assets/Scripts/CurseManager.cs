@@ -13,6 +13,7 @@ public class CurseManager : MonoBehaviour
     [SerializeField] private GameObject curseMenu;
     [SerializeField] private List<CurseButton> curseButtons;
     public static CurseManager instance;
+    public static bool WhackTheRipper;
     public Dictionary<int, Curse> CurseDictionary;
     private List<Curse> possibleCurses = new List<Curse>();
     private List<Curse> tempPossibleCurses = new List<Curse>();
@@ -124,6 +125,9 @@ public class CurseManager : MonoBehaviour
 
     public void TakeCurse(int _id)
     {
+        player.GetComponent<PlayerHealth>().heal(1);
+
+
         CurseDictionary.TryGetValue(_id, out Curse _curseTaken);
         possibleCurses.Remove(_curseTaken);
         tempPossibleCurses.Clear();
@@ -132,6 +136,8 @@ public class CurseManager : MonoBehaviour
         {
             tempPossibleCurses.Add(curse);
         }
+
+        Debug.Log(_id);
 
         switch (_id)
         {
@@ -145,6 +151,7 @@ public class CurseManager : MonoBehaviour
                 break;
             case 3:
                 // Whack the ripper: +lifesteal, -health over time
+                WhackTheRipper = true;
                 if (onWhackTheRipper != null)
                 {
                     onWhackTheRipper();

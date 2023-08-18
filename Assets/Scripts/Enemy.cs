@@ -10,6 +10,7 @@ public class Enemy : DamageableEntity
     [SerializeField] public float attackRange;
     [SerializeField] public string ignoreTag;
     public GameObject player;
+    public static int numKills;
 
     private float distance;
 
@@ -45,12 +46,9 @@ public class Enemy : DamageableEntity
             {
                 if (collision.gameObject.CompareTag(ignoreTag))
                 {
-                    Debug.Log("Ignored Damage");
                     return;
                 }
             }
-
-            Debug.Log("Damage Player");
 
             enemyHit.TakeDamage(damage);
         }
@@ -72,6 +70,11 @@ public class Enemy : DamageableEntity
     public override void Die()
     {
         EnemySpawner.numEnemies--;
+        numKills++;
+        if(CurseManager.WhackTheRipper)
+        {
+            PlayerHealth.instance.heal(1);
+        }
         Destroy(gameObject);
     }
 }

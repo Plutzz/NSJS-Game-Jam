@@ -61,6 +61,14 @@ public class Timer : MonoBehaviour
         TimerTxt.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
+    public string GetTime()
+    {
+        float minutes = Mathf.FloorToInt(currentTime / 60);
+        float seconds = Mathf.FloorToInt(currentTime % 60);
+
+        return string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
     public event Action onCurseTime;
     public void CurseTime()
     {
